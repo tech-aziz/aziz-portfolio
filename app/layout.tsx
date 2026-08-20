@@ -1,32 +1,27 @@
 import type { Metadata } from "next";
-import { Roboto, Roboto_Mono } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const roboto = Roboto({
-  variable: "--font-roboto",
-  weight: ["300", "400", "500", "700", "900"],
+const geistSans = Geist({
+  variable: "--font-geist-sans",
   subsets: ["latin"],
   display: "swap",
 });
 
-const robotoMono = Roboto_Mono({
-  variable: "--font-roboto-mono",
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
   subsets: ["latin"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Azizul Hakim | Senior Mobile Application Engineer | Flutter, KMP & AI-Enabled Delivery",
+  title: "Azizul Hakim | Mobile Application Developer | Flutter & AI-Enabled Delivery",
   description:
-    "Senior Mobile Application Engineer focused on Flutter, Kotlin Multiplatform, Jetpack Compose, SwiftUI, and AI-enabled mobile features for Android and iOS. 15+ apps shipped, 15+ private NDA projects, and 200K+ installs.",
+    "Mobile Application Developer focused on Flutter and AI-enabled mobile features for Android and iOS. 15+ apps shipped, 15+ private NDA projects, and 200K+ installs.",
   keywords: [
     "Azizul Hakim",
-    "Mobile Application Engineer",
+    "Mobile Application Developer",
     "Flutter Developer",
-    "Kotlin Multiplatform",
-    "KMP",
-    "Jetpack Compose",
-    "SwiftUI",
     "Android Developer",
     "iOS Developer",
     "AI Mobile Engineer",
@@ -34,20 +29,20 @@ export const metadata: Metadata = {
     "RevenueCat",
     "ATRULE Technologies",
   ],
-  authors: [{ name: "Azizul Hakim", url: "https://faisalarashad.com/" }],
+  authors: [{ name: "Azizul Hakim", url: "https://github.com/tech-aziz" }],
   creator: "Azizul Hakim",
   openGraph: {
-    title: "Azizul Hakim | Senior Mobile Application Engineer | Flutter, KMP & AI-Enabled Delivery",
+    title: "Azizul Hakim | Mobile Application Developer | Flutter & AI-Enabled Delivery",
     description:
-      "Senior Mobile Application Engineer focused on Flutter, Kotlin Multiplatform, Jetpack Compose, SwiftUI, and AI-enabled mobile features for Android and iOS. 15+ apps shipped, 15+ private NDA projects, and 200K+ installs.",
-    url: "https://faisalarashad.com/",
+      "Mobile Application Developer focused on Flutter and AI-enabled mobile features for Android and iOS. 15+ apps shipped, 15+ private NDA projects, and 200K+ installs.",
+    url: "https://github.com/tech-aziz",
     siteName: "Azizul Hakim Portfolio",
     images: [
       {
         url: "/og-image.svg",
         width: 1200,
         height: 630,
-        alt: "Azizul Hakim - Senior Mobile Application Engineer",
+        alt: "Azizul Hakim - Mobile Application Developer",
       },
     ],
     locale: "en_US",
@@ -55,14 +50,14 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Azizul Hakim | Senior Mobile Application Engineer | Flutter, KMP & AI-Enabled Delivery",
+    title: "Azizul Hakim | Mobile Application Developer | Flutter & AI-Enabled Delivery",
     description:
-      "Senior Mobile Application Engineer focused on Flutter, Kotlin Multiplatform, Jetpack Compose, SwiftUI, and AI-enabled mobile features for Android and iOS. 15+ apps shipped, 15+ private NDA projects, and 200K+ installs.",
+      "Mobile Application Developer focused on Flutter and AI-enabled mobile features for Android and iOS. 15+ apps shipped, 15+ private NDA projects, and 200K+ installs.",
     images: ["/og-image.svg"],
   },
   icons: {
-    icon: "/favicon.svg",
-    apple: "/favicon.svg",
+    icon: "/icon.svg",
+    apple: "/icon.svg",
   },
 };
 
@@ -70,18 +65,14 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Azizul Hakim",
-  url: "https://faisalarshad.com",
-  jobTitle: "Senior Mobile Application Engineer | Flutter, KMP & AI-Enabled Delivery",
+  url: "https://github.com/tech-aziz",
+  jobTitle: "Mobile Application Developer | Flutter & AI-Enabled Delivery",
   description:
-    "Senior Mobile Application Engineer focused on Flutter, Kotlin Multiplatform, Jetpack Compose, SwiftUI, and AI-enabled mobile features for Android and iOS. 15+ apps shipped, 15+ private NDA projects, and 200K+ installs.",
+    "Mobile Application Developer focused on Flutter and AI-enabled mobile features for Android and iOS. 15+ apps shipped, 15+ private NDA projects, and 200K+ installs.",
   knowsAbout: [
     "Flutter",
     "Dart",
     "Kotlin",
-    "Kotlin Multiplatform",
-    "KMP",
-    "Jetpack Compose",
-    "SwiftUI",
     "Java",
     "Swift",
     "Android",
@@ -119,7 +110,7 @@ const jsonLd = {
   sameAs: [
     "https://github.com/tech-aziz",
     "https://www.linkedin.com/in/faisal-arshad-bb5ab1153/",
-    "https://www.upwork.com/freelancers/~0143722ece1833a4ed",
+    "https://www.upwork.com/freelancers/~01bc46ada7bc95dc8f?referrer_url_path=%2Fnx%2Fsearch%2Ftalent%2Fdetails%2F~01bc46ada7bc95dc8f%2Fprofile",
   ],
   worksFor: {
     "@type": "Organization",
@@ -145,7 +136,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${roboto.variable} ${robotoMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
       suppressHydrationWarning
     >
       <head>

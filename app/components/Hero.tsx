@@ -1,22 +1,20 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
-
-const TYPING_PHRASES = [
-  "Agentic AI for Mobile",
-  "On-Device AI",
-  "LLM + OpenAI Integrations",
-  "OCR, Vision & Voice AI",
-  "Semantic Search + RAG",
-  "Flutter + KMP Delivery",
-  "Play Store + App Store Releases",
-];
+import { useHeroStore } from "../../store/useHeroStore";
+import { TYPING_PHRASES, heroStats } from "../../dummy-data/heroData";
 
 export default function Hero() {
-  const [phraseIndex, setPhraseIndex] = useState(0);
-  const [currentText, setCurrentText] = useState("");
-  const [isDeleting, setIsDeleting] = useState(false);
+  const {
+    phraseIndex,
+    currentText,
+    isDeleting,
+    setPhraseIndex,
+    setCurrentText,
+    setIsDeleting,
+    nextPhrase
+  } = useHeroStore();
 
   useEffect(() => {
     const targetPhrase = TYPING_PHRASES[phraseIndex];
@@ -29,7 +27,7 @@ export default function Hero() {
         }, 30);
       } else {
         setIsDeleting(false);
-        setPhraseIndex((prev) => (prev + 1) % TYPING_PHRASES.length);
+        nextPhrase(TYPING_PHRASES.length);
       }
     } else {
       if (currentText.length < targetPhrase.length) {
@@ -44,17 +42,12 @@ export default function Hero() {
     }
 
     return () => clearTimeout(timer);
-  }, [currentText, isDeleting, phraseIndex]);
+  }, [currentText, isDeleting, phraseIndex, setCurrentText, setIsDeleting, nextPhrase]);
 
-  const stats = [
-    { value: "5+", label: "Years Experience" },
-    { value: "15+", label: "Apps Shipped" },
-    { value: "200K+", label: "Installs" },
-    { value: "15+", label: "Private (NDA) Projects" },
-  ];
+  const stats = heroStats;
 
   return (
-    <section className="relative overflow-hidden min-h-screen flex items-center pt-28 pb-20 bg-[#0a0f0c]" id="hero">
+    <section className="relative overflow-hidden min-h-screen flex items-center pt-36 md:pt-44 pb-20 bg-[#0a0f0c]" id="hero">
       {/* Exact Background Radial Glow Effect from original site inspect element */}
       <div
         className="absolute inset-0 pointer-events-none"
@@ -72,17 +65,15 @@ export default function Hero() {
         {/* Profile Avatar Ring with Glowing Green Halo (#10B981) */}
         <div className="flex justify-center mb-4">
           <div className="relative group">
-            <div className="w-28 h-28 md:w-32 md:h-32 rounded-full bg-[#10b981] p-1 shadow-2xl shadow-emerald-500/50 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
-              <div className="w-full h-full rounded-full bg-slate-950 overflow-hidden relative border-2 border-emerald-400/50">
-                <Image
-                  src="/azizul-headshot.png"
-                  alt="Azizul Hakim"
-                  fill
-                  sizes="128px"
-                  className="object-cover"
-                  priority
-                />
-              </div>
+            <div className="w-28 h-28 md:w-32 md:h-32 rounded-full border-2 border-[#10b981] shadow-2xl shadow-emerald-500/30 overflow-hidden relative transition-transform duration-300 group-hover:scale-105">
+              <Image
+                src="/azizul-headshot.png"
+                alt="Azizul Hakim"
+                fill
+                sizes="128px"
+                className="object-cover"
+                priority
+              />
             </div>
           </div>
         </div>
@@ -91,13 +82,13 @@ export default function Hero() {
         <p className="text-gray-400 text-base font-medium tracking-wide">Hi, I&apos;m</p>
 
         {/* Main Monospace Name Title */}
-        <h1 className="font-mono font-extrabold text-5xl md:text-7xl lg:text-8xl text-white tracking-tight leading-none">
+        <h1 className="font-mono font-extrabold text-4xl md:text-6xl lg:text-7xl text-white tracking-tight leading-none">
           Azizul Hakim
         </h1>
 
         {/* Subtitle */}
         <p className="text-lg md:text-2xl text-gray-200 font-medium max-w-3xl mx-auto leading-relaxed">
-          Senior Mobile Application Engineer <span className="text-gray-500 font-normal">|</span> Flutter, KMP &amp; AI-Enabled Delivery
+          Mobile Application Developer <span className="text-gray-500 font-normal">|</span> Flutter &amp; AI-Enabled Delivery
         </p>
 
         {/* Cycling Typing Effect Text (#10B981) */}
@@ -114,20 +105,20 @@ export default function Hero() {
 
         {/* Monospace Tagline Bar */}
         <p className="text-xs md:text-sm text-gray-400 font-mono tracking-wider">
-          5+ Years <span className="text-[#10b981]">|</span> 15+ Apps Shipped <span className="text-[#10b981]">|</span> 200K+ Installs <span className="text-[#10b981]">|</span> 15+ Private (NDA) Projects
+          4+ Years <span className="text-[#10b981]">|</span> 8+ Apps Delivered <span className="text-[#10b981]">|</span> 6K+ Installs <span className="text-[#10b981]">|</span> 5+ Private Projects
         </p>
 
         {/* 4 Stat Counter Cards Grid (#182F27) */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5 pt-4 max-w-3xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5 pt-4 max-w-3xl mx-auto w-full">
           {stats.map((stat, idx) => (
             <div
               key={idx}
-              className="bg-[#182f27] border border-[#10b981]/25 hover:border-[#10b981]/60 rounded-2xl p-5 md:p-6 text-center transition-all duration-300 hover:-translate-y-1 shadow-xl shadow-black/20 group"
+              className="bg-[#182f27] border border-[#10b981]/25 hover:border-[#10b981]/60 rounded-2xl p-5 md:p-6 text-center transition-all duration-300 hover:-translate-y-1 shadow-xl shadow-black/20 group flex flex-col justify-center items-center"
             >
-              <div className="text-4xl md:text-5xl font-extrabold font-mono text-[#10b981] group-hover:scale-105 transition-transform">
+              <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold font-mono text-[#10b981] group-hover:scale-105 transition-transform whitespace-nowrap">
                 {stat.value}
               </div>
-              <div className="text-xs text-gray-300 mt-2 font-sans font-medium">
+              <div className="text-[10px] md:text-xs text-gray-300 mt-2 font-mono tracking-wide whitespace-nowrap">
                 {stat.label}
               </div>
             </div>
@@ -138,15 +129,15 @@ export default function Hero() {
         <div className="flex flex-wrap justify-center items-center gap-4 pt-4">
           <a
             href="#projects"
-            className="inline-flex items-center gap-2 bg-[#10b981] hover:bg-[#059669] text-slate-950 font-extrabold px-7 py-3 rounded-xl font-mono text-sm transition-all shadow-lg shadow-emerald-500/25 hover:scale-105 cursor-pointer"
+            className="inline-flex items-center justify-center bg-[#10b981] hover:bg-[#0e9f6e] text-white font-medium px-6 py-3 rounded-xl transition-all hover:scale-105 cursor-pointer text-base"
           >
-            <span>View Projects</span>
+            View Projects
           </a>
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 bg-[#182f27] border border-[#10b981]/30 hover:border-[#10b981]/60 text-white font-medium px-7 py-3 rounded-xl font-mono text-sm transition-all hover:scale-105 cursor-pointer"
+            className="inline-flex items-center justify-center bg-transparent border border-white/10 hover:border-white/20 text-white font-medium px-6 py-3 rounded-xl transition-all hover:scale-105 cursor-pointer text-base"
           >
-            <span>Contact Me</span>
+            Contact Me
           </a>
         </div>
 

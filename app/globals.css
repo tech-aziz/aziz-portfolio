@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: var(--font-roboto), Roboto, sans-serif;
-  --font-mono: var(--font-roboto-mono), Roboto Mono, monospace;
+  --font-sans: var(--font-geist-sans), Inter, sans-serif;
+  --font-mono: var(--font-geist-mono), Courier, monospace;
 
   --color-bg: var(--theme-bg);
   --color-bg-card: var(--theme-bg-card);
@@ -92,14 +92,21 @@ html {
 body {
   background-color: var(--theme-bg);
   color: var(--theme-text);
-  font-family: var(--font-roboto), Roboto, system-ui, -apple-system, sans-serif;
+  font-family: var(--font-geist-sans), Inter, system-ui, -apple-system, sans-serif;
   transition: background-color 0.3s ease, color 0.3s ease;
   overflow-x: hidden;
 }
 
 @keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
 }
 
 .animate-blink {
