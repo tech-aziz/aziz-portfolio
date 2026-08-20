@@ -5,7 +5,6 @@ import Clients from "./components/Clients";
 import Services from "./components/Services";
 import Industries from "./components/Industries";
 import Projects from "./components/Projects";
-import NdaProducts from "./components/NdaProducts";
 import TechStack from "./components/TechStack";
 import WorkTogether from "./components/WorkTogether";
 import Experience from "./components/Experience";
@@ -22,7 +21,6 @@ export default function Home() {
         <Services />
         <Industries />
         <Projects />
-        <NdaProducts />
         <TechStack />
         <WorkTogether />
         <Experience />
