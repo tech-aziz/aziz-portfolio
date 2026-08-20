@@ -75,7 +75,7 @@ export default function Experience() {
               </div>
 
               {/* Timeline Card */}
-              <div className="bg-[#182f27] border border-[#10b981]/25 rounded-2xl p-6 md:p-8 hover:border-[#10b981]/60 transition-all duration-300 shadow-lg shadow-black/5">
+              <div className="bg-[var(--color-bg-green-card)] border border-[var(--color-border-green-card)] rounded-2xl p-6 md:p-8 hover:border-[#10b981]/60 transition-all duration-300 shadow-lg shadow-black/5">
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-3">
                   <div>
                     <h3 className="text-xl font-bold text-[var(--color-text)]">
@@ -90,11 +90,11 @@ export default function Experience() {
                   </div>
 
                   <div className="flex flex-wrap items-center gap-3 text-xs text-[var(--color-text-muted)] font-mono">
-                    <span className="flex items-center gap-1.5 bg-[#0a0f0c] px-3 py-1 rounded-full border border-[var(--color-border)]">
+                    <span className="flex items-center gap-1.5 bg-[var(--color-bg)] px-3 py-1 rounded-full border border-[var(--color-border)]">
                       <Calendar className="w-3 h-3 text-[#10b981]" />
                       {exp.period}
                     </span>
-                    <span className="flex items-center gap-1.5 bg-[#0a0f0c] px-3 py-1 rounded-full border border-[var(--color-border)]">
+                    <span className="flex items-center gap-1.5 bg-[var(--color-bg)] px-3 py-1 rounded-full border border-[var(--color-border)]">
                       <MapPin className="w-3 h-3 text-[#10b981]" />
                       {exp.location}
                     </span>
@@ -132,7 +132,7 @@ export default function Experience() {
         </div>
 
         {/* Education Box */}
-        <div className="bg-[#182f27] border border-[#10b981]/25 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-lg shadow-black/5">
+        <div className="bg-[var(--color-bg-green-card)] border border-[var(--color-border-green-card)] rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-lg shadow-black/5">
           <div className="flex items-start gap-4">
             <div className="w-12 h-12 rounded-2xl bg-[#10b981]/10 border border-[#10b981]/20 flex items-center justify-center text-[#10b981] shrink-0">
               <GraduationCap className="w-6 h-6" />
@@ -149,13 +149,13 @@ export default function Experience() {
               </p>
             </div>
           </div>
-          <span className="px-4 py-1.5 rounded-full bg-[#0a0f0c] text-xs font-mono text-[var(--color-text-muted)] border border-[var(--color-border)] shrink-0">
+          <span className="px-4 py-1.5 rounded-full bg-[var(--color-bg)] text-xs font-mono text-[var(--color-text-muted)] border border-[var(--color-border)] shrink-0">
             Graduated
           </span>
         </div>
 
         {/* Bottom CTA Banner (Exact Replica of Reference Screenshot) */}
-        <div className="relative overflow-hidden bg-[#182f27] border border-[#10b981]/30 rounded-3xl p-10 md:p-14 text-center shadow-2xl space-y-6">
+        <div className="relative overflow-hidden bg-[var(--color-bg-green-card)] border border-[var(--color-border-green-card)] rounded-3xl p-10 md:p-14 text-center shadow-2xl space-y-6">
           {/* Top Status Pill */}
           <div className="flex justify-center">
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-[#10b981] text-xs font-mono font-medium">
@@ -166,14 +166,14 @@ export default function Experience() {
               Available for freelance &amp; full-time mobile roles
             </span>
           </div>
-          
+
           {/* Title */}
-          <h3 className="font-mono text-3xl md:text-5xl font-extrabold text-white tracking-tight leading-tight max-w-2xl mx-auto">
+          <h3 className="font-mono text-3xl md:text-5xl font-extrabold text-[var(--color-text)] tracking-tight leading-tight max-w-2xl mx-auto">
             Let&apos;s Build Your Next Mobile App
           </h3>
 
           {/* Description */}
-          <div className="text-gray-300 text-sm md:text-base max-w-xl mx-auto space-y-1 leading-relaxed">
+          <div className="text-[var(--color-text-muted)] text-sm md:text-base max-w-xl mx-auto space-y-1 leading-relaxed">
             <p>15+ production apps shipped across Flutter, KMP, Android, and iOS.</p>
             <p>Bring me the mobile brief. I&apos;ll help scope it, ship it, and support it through release.</p>
           </div>
@@ -197,7 +197,7 @@ export default function Experience() {
               href="https://www.fiverr.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-slate-900/80 border border-slate-700 hover:border-[#10b981]/40 text-white font-medium text-sm font-sans transition-all hover:scale-105"
+              className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-[var(--color-bg-card)] border border-[var(--color-border)] hover:border-[var(--color-accent)]/40 text-[var(--color-text)] font-medium text-sm font-sans transition-all hover:scale-105"
             >
               <span className="font-bold text-lg leading-none font-mono">f</span>
               <span>Hire Me on Fiverr</span>
@@ -206,10 +206,10 @@ export default function Experience() {
 
           {/* Bottom Code Review Link */}
           <div className="pt-2">
-            <p className="text-xs text-gray-400">
+            <p className="text-xs text-[var(--color-text-muted)]">
               Prefer to review code first?{" "}
               <a
-                href="https://github.com/faisalarshadciit"
+                href="https://github.com/tech-aziz"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#10b981] hover:underline font-mono inline-flex items-center gap-1 font-semibold"
@@ -217,7 +217,7 @@ export default function Experience() {
                 <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
                   <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
                 </svg>
-                GitHub @faisalarshadciit
+                GitHub @tech-aziz
               </a>
             </p>
           </div>

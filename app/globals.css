@@ -14,6 +14,8 @@
   --color-accent: var(--theme-accent);
   --color-accent-hover: var(--theme-accent-hover);
   --color-green: var(--theme-green);
+  --color-bg-green-card: var(--theme-bg-green-card);
+  --color-border-green-card: var(--theme-border-green-card);
 }
 
 @utility container {
@@ -36,6 +38,8 @@
     --theme-accent: #10b981;
     --theme-accent-hover: #059669;
     --theme-green: #10b981;
+    --theme-bg-green-card: #182f27;
+    --theme-border-green-card: rgba(16, 185, 129, 0.25);
 
     --color-bg: var(--theme-bg);
     --color-bg-card: var(--theme-bg-card);
@@ -47,6 +51,8 @@
     --color-accent: var(--theme-accent);
     --color-accent-hover: var(--theme-accent-hover);
     --color-green: var(--theme-green);
+    --color-bg-green-card: var(--theme-bg-green-card);
+    --color-border-green-card: var(--theme-border-green-card);
   }
 
   .light {
@@ -60,6 +66,8 @@
     --theme-accent: #10b981;
     --theme-accent-hover: #059669;
     --theme-green: #10b981;
+    --theme-bg-green-card: #f0fdf4;
+    --theme-border-green-card: rgba(16, 185, 129, 0.2);
 
     --color-bg: var(--theme-bg);
     --color-bg-card: var(--theme-bg-card);
@@ -71,6 +79,8 @@
     --color-accent: var(--theme-accent);
     --color-accent-hover: var(--theme-accent-hover);
     --color-green: var(--theme-green);
+    --color-bg-green-card: var(--theme-bg-green-card);
+    --color-border-green-card: var(--theme-border-green-card);
   }
 }
 

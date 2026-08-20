@@ -441,7 +441,7 @@ export default function Projects() {
         {selectedProject && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-200">
             <div
-              className="bg-[#161B18] border border-slate-800 rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 md:p-8 shadow-2xl relative"
+              className="bg-[#161B18] border border-slate-800 rounded-3xl max-w-2xl lg:max-w-[70vw] w-full max-h-[90vh] overflow-y-auto p-6 md:p-8 shadow-2xl relative"
               onClick={(e) => e.stopPropagation()}
             >
               <button

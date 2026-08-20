@@ -117,7 +117,7 @@ const jsonLd = {
     "AI Code Review",
   ],
   sameAs: [
-    "https://github.com/faisalarshadciit",
+    "https://github.com/tech-aziz",
     "https://www.linkedin.com/in/faisal-arshad-bb5ab1153/",
     "https://www.upwork.com/freelancers/~0143722ece1833a4ed",
   ],

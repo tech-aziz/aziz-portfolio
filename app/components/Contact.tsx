@@ -113,14 +113,14 @@ export default function Contact() {
 
               <div className="space-y-3">
                 <a
-                  href="https://github.com/faisalarshadciit"
+                  href="https://github.com/tech-aziz"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-between p-3 rounded-xl bg-[var(--color-bg)] border border-[var(--color-border)] hover:border-[var(--color-accent)]/40 text-xs font-medium text-[var(--color-text)] transition-colors group"
                 >
                   <div className="flex items-center gap-2.5">
                     <GithubIcon className="w-4 h-4 text-[var(--color-accent)]" />
-                    <span>GitHub / faisalarshadciit</span>
+                    <span>GitHub / tech-aziz</span>
                   </div>
                   <span className="text-[var(--color-text-muted)] group-hover:text-[var(--color-accent)] font-mono">&rarr;</span>
                 </a>
