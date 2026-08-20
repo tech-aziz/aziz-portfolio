@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
-import { Mail, Copy, Check, Award, MapPin, Send, MessageSquare } from "lucide-react";
+import React from "react";
+import { Mail, Copy, Check, MapPin, Send, MessageSquare } from "lucide-react";
+import { useContactStore } from "../../store/useContactStore";
 
 function GithubIcon({ className = "w-4 h-4" }: { className?: string }) {
   return (
@@ -25,35 +26,17 @@ function LinkedinIcon({ className = "w-4 h-4" }: { className?: string }) {
 
 
 export default function Contact() {
-  const [copied, setCopied] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    inquiryType: "Mobile App Project",
-    subject: "",
-    message: "",
-  });
-
-  const emailAddress = "faisalarshadciit@gmail.com";
-
-  const handleCopyEmail = () => {
-    navigator.clipboard.writeText(emailAddress);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2500);
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-
-    // Simulate clean submission
-    setTimeout(() => {
-      setLoading(false);
-      setSubmitted(true);
-    }, 1000);
-  };
+  const {
+    copied,
+    submitted,
+    loading,
+    formData,
+    emailAddress,
+    updateField,
+    resetForm,
+    copyEmail,
+    submitForm
+  } = useContactStore();
 
   return (
     <section id="contact" className="py-20 px-6 bg-[var(--color-bg)]/40 relative">
@@ -80,35 +63,32 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="flex items-center justify-between gap-2 p-3 rounded-xl bg-[var(--color-bg)] border border-[var(--color-border)]">
-                <span className="font-mono text-xs text-[var(--color-text)] truncate">
+              <div className="flex items-center justify-between gap-3 bg-[var(--color-bg)] border border-[var(--color-border)] rounded-xl p-3">
+                <a
+                  href={`mailto:${emailAddress}`}
+                  className="text-xs font-mono font-semibold text-[var(--color-text)] hover:text-[var(--color-accent)] transition-colors truncate"
+                >
                   {emailAddress}
-                </span>
+                </a>
                 <button
-                  onClick={handleCopyEmail}
+                  onClick={copyEmail}
                   type="button"
-                  aria-label="Copy email"
-                  className="px-3 py-1.5 rounded-lg bg-[var(--color-accent)]/10 hover:bg-[var(--color-accent)]/20 text-[var(--color-accent)] text-xs font-medium flex items-center gap-1.5 transition-colors cursor-pointer shrink-0"
+                  aria-label="Copy email address"
+                  className="p-2 rounded-lg bg-[var(--color-bg-card)] border border-[var(--color-border)] text-[var(--color-text-muted)] hover:text-[var(--color-text)] hover:border-[var(--color-accent)]/30 transition-all cursor-pointer shrink-0"
                 >
                   {copied ? (
-                    <>
-                      <Check className="w-3.5 h-3.5" />
-                      <span>Copied!</span>
-                    </>
+                    <Check className="w-4 h-4 text-emerald-500" />
                   ) : (
-                    <>
-                      <Copy className="w-3.5 h-3.5" />
-                      <span>Copy</span>
-                    </>
+                    <Copy className="w-4 h-4" />
                   )}
                 </button>
               </div>
             </div>
 
-            {/* Social & Profiles */}
+            {/* Social Channels Card */}
             <div className="bg-[var(--color-bg-card)] border border-[var(--color-border)] rounded-2xl p-6 shadow-lg shadow-black/5">
-              <h3 className="font-bold text-[var(--color-text)] text-sm mb-4">
-                Online Profiles &amp; Work
+              <h3 className="font-mono text-xs font-semibold text-[var(--color-text-muted)] tracking-wider uppercase mb-4">
+                Social Channels
               </h3>
 
               <div className="space-y-3">
@@ -116,45 +96,45 @@ export default function Contact() {
                   href="https://github.com/tech-aziz"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-between p-3 rounded-xl bg-[var(--color-bg)] border border-[var(--color-border)] hover:border-[var(--color-accent)]/40 text-xs font-medium text-[var(--color-text)] transition-colors group"
+                  className="group flex items-center justify-between p-3 rounded-xl bg-[var(--color-bg)] border border-[var(--color-border)] hover:border-[var(--color-accent)]/30 transition-all"
                 >
-                  <div className="flex items-center gap-2.5">
-                    <GithubIcon className="w-4 h-4 text-[var(--color-accent)]" />
-                    <span>GitHub / tech-aziz</span>
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-lg bg-gray-500/10 border border-gray-500/20 flex items-center justify-center text-gray-300 group-hover:text-white transition-colors">
+                      <GithubIcon className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <span className="block text-xs font-semibold text-[var(--color-text)] group-hover:text-[var(--color-accent)] transition-colors">
+                        GitHub Profile
+                      </span>
+                      <span className="block text-[10px] text-[var(--color-text-muted)] font-mono">
+                        @tech-aziz
+                      </span>
+                    </div>
                   </div>
                   <span className="text-[var(--color-text-muted)] group-hover:text-[var(--color-accent)] font-mono">&rarr;</span>
                 </a>
 
                 <a
-                  href="https://www.linkedin.com/in/faisal-arshad-bb5ab1153/"
+                  href="https://linkedin.com/in/faisalarshadciit"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-between p-3 rounded-xl bg-[var(--color-bg)] border border-[var(--color-border)] hover:border-[var(--color-accent)]/40 text-xs font-medium text-[var(--color-text)] transition-colors group"
+                  className="group flex items-center justify-between p-3 rounded-xl bg-[var(--color-bg)] border border-[var(--color-border)] hover:border-[var(--color-accent)]/30 transition-all"
                 >
-                  <div className="flex items-center gap-2.5">
-                    <LinkedinIcon className="w-4 h-4 text-[var(--color-accent)]" />
-                    <span>LinkedIn Profile</span>
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 group-hover:text-blue-300 transition-colors">
+                      <LinkedinIcon className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <span className="block text-xs font-semibold text-[var(--color-text)] group-hover:text-[var(--color-accent)] transition-colors">
+                        LinkedIn Network
+                      </span>
+                      <span className="block text-[10px] text-[var(--color-text-muted)] font-mono">
+                        @faisalarshadciit
+                      </span>
+                    </div>
                   </div>
                   <span className="text-[var(--color-text-muted)] group-hover:text-[var(--color-accent)] font-mono">&rarr;</span>
                 </a>
-
-                <a
-                  href="https://www.upwork.com/freelancers/~0143722ece1833a4ed"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-between p-3 rounded-xl bg-[var(--color-bg)] border border-[var(--color-border)] hover:border-[var(--color-accent)]/40 text-xs font-medium text-[var(--color-text)] transition-colors group"
-                >
-                  <div className="flex items-center gap-2.5">
-                    <Award className="w-4 h-4 text-[var(--color-accent)]" />
-                    <span>Upwork (Top Rated 100% Success)</span>
-                  </div>
-                  <span className="text-[var(--color-text-muted)] group-hover:text-[var(--color-accent)] font-mono">&rarr;</span>
-                </a>
-              </div>
-
-              <div className="mt-5 pt-4 border-t border-[var(--color-border)] flex items-center gap-2 text-xs text-[var(--color-text-muted)] font-mono">
-                <MapPin className="w-4 h-4 text-[var(--color-accent)]" />
-                <span>Lahore, Punjab, Pakistan (PKT / UTC+5)</span>
               </div>
             </div>
           </div>
@@ -182,23 +162,14 @@ export default function Contact() {
                     Thank you for reaching out, {formData.name || "friend"}. I will review your note regarding &quot;{formData.inquiryType}&quot; and get back to you shortly.
                   </p>
                   <button
-                    onClick={() => {
-                      setSubmitted(false);
-                      setFormData({
-                        name: "",
-                        email: "",
-                        inquiryType: "Mobile App Project",
-                        subject: "",
-                        message: "",
-                      });
-                    }}
+                    onClick={resetForm}
                     className="mt-4 px-5 py-2 rounded-xl bg-[var(--color-accent)] text-white text-xs font-medium hover:bg-[var(--color-accent-hover)] transition-colors"
                   >
                     Send Another Message
                   </button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <form onSubmit={submitForm} className="space-y-4">
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-xs font-mono text-[var(--color-text-muted)] mb-1.5 font-medium">
@@ -208,7 +179,7 @@ export default function Contact() {
                         type="text"
                         required
                         value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        onChange={(e) => updateField("name", e.target.value)}
                         placeholder="John Doe"
                         className="w-full px-4 py-2.5 rounded-xl bg-[var(--color-bg)] border border-[var(--color-border)] focus:border-[var(--color-accent)] outline-none text-xs text-[var(--color-text)] placeholder-[var(--color-text-muted)] transition-colors"
                       />
@@ -222,7 +193,7 @@ export default function Contact() {
                         type="email"
                         required
                         value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        onChange={(e) => updateField("email", e.target.value)}
                         placeholder="john@example.com"
                         className="w-full px-4 py-2.5 rounded-xl bg-[var(--color-bg)] border border-[var(--color-border)] focus:border-[var(--color-accent)] outline-none text-xs text-[var(--color-text)] placeholder-[var(--color-text-muted)] transition-colors"
                       />
@@ -236,7 +207,7 @@ export default function Contact() {
                       </label>
                       <select
                         value={formData.inquiryType}
-                        onChange={(e) => setFormData({ ...formData, inquiryType: e.target.value })}
+                        onChange={(e) => updateField("inquiryType", e.target.value)}
                         className="w-full px-4 py-2.5 rounded-xl bg-[var(--color-bg)] border border-[var(--color-border)] focus:border-[var(--color-accent)] outline-none text-xs text-[var(--color-text)] transition-colors cursor-pointer"
                       >
                         <option value="Mobile App Project">Mobile App Project (Flutter / KMP)</option>
@@ -253,7 +224,7 @@ export default function Contact() {
                       <input
                         type="text"
                         value={formData.subject}
-                        onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                        onChange={(e) => updateField("subject", e.target.value)}
                         placeholder="Project timeline & Scope"
                         className="w-full px-4 py-2.5 rounded-xl bg-[var(--color-bg)] border border-[var(--color-border)] focus:border-[var(--color-accent)] outline-none text-xs text-[var(--color-text)] placeholder-[var(--color-text-muted)] transition-colors"
                       />
@@ -268,7 +239,7 @@ export default function Contact() {
                       required
                       rows={4}
                       value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      onChange={(e) => updateField("message", e.target.value)}
                       placeholder="Tell me about your app project, goals, or requirements..."
                       className="w-full px-4 py-2.5 rounded-xl bg-[var(--color-bg)] border border-[var(--color-border)] focus:border-[var(--color-accent)] outline-none text-xs text-[var(--color-text)] placeholder-[var(--color-text-muted)] transition-colors resize-none"
                     />

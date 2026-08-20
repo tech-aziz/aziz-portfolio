@@ -1,58 +1,11 @@
 "use client";
 
 import React from "react";
-import { Briefcase, GraduationCap, Calendar, MapPin, CheckCircle2, ArrowRight, ExternalLink } from "lucide-react";
+import { Briefcase, GraduationCap, Calendar, MapPin, CheckCircle2, ArrowRight } from "lucide-react";
+import { usePortfolioStore } from "../../store/usePortfolioStore";
 
 export default function Experience() {
-  const experiences = [
-    {
-      title: "Senior Mobile Application Engineer",
-      company: "ATRULE Technologies",
-      period: "2021 — Present",
-      location: "Lahore, Punjab, Pakistan",
-      type: "Full-Time Partnership (5+ Years)",
-      description:
-        "Leading cross-platform and native mobile application engineering, architectural design, store releases, and AI feature integration across 15+ production applications.",
-      bulletPoints: [
-        "Architected scalable MVVM & Clean Architecture codebases in Flutter, serving over 200,000+ total active installs.",
-        "Spearheaded Kotlin Multiplatform (KMP) adoption with shared Kotlin core logic and native Jetpack Compose / SwiftUI user interfaces.",
-        "Integrated RevenueCat subscription paywalls, FCM push notifications, WebSockets real-time sync, and Google Maps API.",
-        "Engineered on-device AI capabilities including ML Kit OCR document parsing and OpenAI LLM assistants.",
-        "Managed 100% of Google Play Console & Apple App Store Connect submission lifecycles and phased rollouts."
-      ],
-      skills: ["Flutter", "KMP", "Jetpack Compose", "SwiftUI", "RevenueCat", "Firebase", "AI Integration"],
-    },
-    {
-      title: "Top Rated Mobile Application Engineer",
-      company: "Upwork & Independent Client Services",
-      period: "2020 — Present",
-      location: "Remote (Global Clients)",
-      type: "Freelance Consultancy",
-      description:
-        "Delivered end-to-end mobile app development with a 100% Job Success score for clients across North America, Europe, UAE, and Asia.",
-      bulletPoints: [
-        "Delivered 15+ private NDA mobile projects in fintech, trading utilities, fitness, and enterprise logistics.",
-        "Partnered directly with founders and product teams to refactor legacy codebases and reduce app crash rates by 80%.",
-        "Conducted code audits and performance optimization for smooth 60fps mobile UI rendering."
-      ],
-      skills: ["Flutter", "Dart", "REST APIs", "Fintech Apps", "Client Strategy", "Code Review"],
-    },
-    {
-      title: "Mobile Software Engineer",
-      company: "CodeDesk Studio & Freelance Projects",
-      period: "2019 — 2021",
-      location: "Lahore, Pakistan",
-      type: "Mobile Engineering",
-      description:
-        "Built native Android applications and early cross-platform Flutter mobile solutions.",
-      bulletPoints: [
-        "Developed native Android apps using Kotlin and Java with SQLite local databases.",
-        "Integrated Firebase Authentication, FCM notifications, and AdMob monetization streams.",
-        "Collaborated with UI/UX designers to translate Figma mockups into responsive pixel-perfect screens."
-      ],
-      skills: ["Android", "Kotlin", "Java", "Flutter", "SQLite", "Firebase"],
-    },
-  ];
+  const { experiences, education } = usePortfolioStore();
 
   return (
     <section id="experience" className="py-20 px-6">
@@ -139,23 +92,23 @@ export default function Experience() {
             </div>
             <div>
               <h3 className="text-lg font-bold text-[var(--color-text)] mb-1">
-                COMSATS University Islamabad
+                {education.school}
               </h3>
               <p className="text-sm font-semibold text-[#10b981] mb-1">
-                Bachelor of Science in Computer Science (BSCS)
+                {education.degree}
               </p>
               <p className="text-xs text-[var(--color-text-muted)]">
-                Core Focus: Mobile Application Architecture, Object-Oriented Systems, Data Structures &amp; Algorithms, Software Engineering.
+                {education.focus}
               </p>
             </div>
           </div>
           <span className="px-4 py-1.5 rounded-full bg-[var(--color-bg)] text-xs font-mono text-[var(--color-text-muted)] border border-[var(--color-border)] shrink-0">
-            Graduated
+            {education.status}
           </span>
         </div>
 
         {/* Bottom CTA Banner (Exact Replica of Reference Screenshot) */}
-        <div className="relative overflow-hidden bg-[var(--color-bg-green-card)] border border-[var(--color-border-green-card)] rounded-3xl p-10 md:p-14 text-center shadow-2xl space-y-6">
+        <div className="relative overflow-hidden bg-[var(--color-bg-green-card)] border border-[var(--color-border-green-card)] rounded-3xl p-10 md:p-14 text-center shadow-2xl space-y-6 max-w-[950px] mx-auto w-full">
           {/* Top Status Pill */}
           <div className="flex justify-center">
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-[#10b981] text-xs font-mono font-medium">
@@ -174,20 +127,20 @@ export default function Experience() {
 
           {/* Description */}
           <div className="text-[var(--color-text-muted)] text-sm md:text-base max-w-xl mx-auto space-y-1 leading-relaxed">
-            <p>15+ production apps shipped across Flutter, KMP, Android, and iOS.</p>
+            <p>8+ production apps shipped across Flutter, Android, and iOS.</p>
             <p>Bring me the mobile brief. I&apos;ll help scope it, ship it, and support it through release.</p>
           </div>
 
           {/* Action Buttons Row */}
           <div className="flex flex-wrap justify-center items-center gap-4 pt-2">
             <a
-              href="https://www.upwork.com/freelancers/~0143722ece1833a4ed"
+              href="https://www.upwork.com/freelancers/~01bc46ada7bc95dc8f?referrer_url_path=%2Fnx%2Fsearch%2Ftalent%2Fdetails%2F~01bc46ada7bc95dc8f%2Fprofile"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-[#10b981] hover:bg-[#059669] text-slate-950 font-bold text-sm font-sans transition-all shadow-lg shadow-emerald-500/25 hover:scale-105"
+              className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-[#10b981] hover:bg-[#0e9f6e] text-white font-semibold text-sm font-sans transition-all hover:scale-105 shadow-sm"
             >
               <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                <path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-4.444 0-6.42 2.736-7.234 5.372-1.222-2.164-2.183-4.577-2.724-6.883H4.743v7.419c0 2.316 1.879 4.2 4.195 4.2 2.315 0 4.195-1.884 4.195-4.2V6.634c.732 1.637 1.83 3.654 3.25 4.966-1.002 1.341-2.222 2.348-3.662 2.923l.972 3.864c2.096-.869 3.842-2.355 5.148-4.28 1.483.743 3.123 1.157 4.881 1.157 3.65 0 6.618-2.969 6.618-6.618 0-3.649-2.968-6.618-6.618-6.618z" />
+                <path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.828v7.112c-.002 1.406-1.141 2.546-2.547 2.548-1.405-.002-2.543-1.143-2.545-2.548V3.492H0v7.112c0 2.914 2.37 5.303 5.281 5.303 2.913 0 5.283-2.389 5.283-5.303v-1.19c.529 1.107 1.182 2.229 1.974 3.221l-1.673 7.873h2.797l1.213-5.71c1.063.679 2.285 1.109 3.686 1.109 3 0 5.439-2.452 5.439-5.45 0-3-2.439-5.439-5.439-5.439z" />
               </svg>
               <span>Hire Me on Upwork</span>
               <ArrowRight className="w-4 h-4" />
@@ -197,9 +150,9 @@ export default function Experience() {
               href="https://www.fiverr.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-[var(--color-bg-card)] border border-[var(--color-border)] hover:border-[var(--color-accent)]/40 text-[var(--color-text)] font-medium text-sm font-sans transition-all hover:scale-105"
+              className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-transparent border border-white/10 hover:border-white/20 text-white font-medium text-sm font-sans transition-all hover:scale-105"
             >
-              <span className="font-bold text-lg leading-none font-mono">f</span>
+              <span className="font-bold text-lg leading-none font-sans">f</span>
               <span>Hire Me on Fiverr</span>
             </a>
           </div>

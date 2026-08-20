@@ -1,31 +1,10 @@
 "use client";
 
 import React from "react";
-import { Smartphone, Layers, CheckCircle2, Bot, Compass } from "lucide-react";
+import { usePortfolioStore } from "../../store/usePortfolioStore";
 
 export default function About() {
-  const highlights = [
-    {
-      title: "Flutter",
-      desc: "Cross-platform Android/iOS delivery",
-      icon: Smartphone,
-    },
-    {
-      title: "KMP + Native UI",
-      desc: "Shared logic with native UX quality",
-      icon: Layers,
-    },
-    {
-      title: "15+ Apps Shipped",
-      desc: "Play Store + App Store, 200K+ installs",
-      icon: CheckCircle2,
-    },
-    {
-      title: "AI-Enabled Delivery",
-      desc: "Faster debugging and smarter release cycles",
-      icon: Bot,
-    },
-  ];
+  const { aboutHighlights: highlights, exploringText, bioParagraphs } = usePortfolioStore();
 
   return (
     <section id="about" className="py-20 px-6">
@@ -44,7 +23,7 @@ export default function About() {
             <span className="text-sm text-[var(--color-text)]">
               Currently exploring:{" "}
               <span className="text-[var(--color-accent)] font-semibold">
-                Agentic AI, on-device AI, multimodal AI, OCR, voice AI, and semantic search
+                {exploringText}
               </span>
             </span>
           </div>
@@ -53,18 +32,9 @@ export default function About() {
         <div className="grid md:grid-cols-2 gap-10">
           {/* Main Bio Paragraphs */}
           <div className="space-y-5">
-            <p className="text-[var(--color-text-muted)] leading-relaxed text-base">
-              I’m a senior mobile application engineer focused on shipping Android and iOS products that are easier to launch, maintain, and grow. Over the last{" "}
-              <span className="text-[var(--color-text)] font-semibold">5+ years</span>, I’ve delivered{" "}
-              <span className="text-[var(--color-text)] font-semibold">15+ production apps</span> across{" "}
-              <span className="text-[var(--color-text)] font-semibold">Flutter, Kotlin Multiplatform, Jetpack Compose, and SwiftUI</span>.
-            </p>
-            <p className="text-[var(--color-text-muted)] leading-relaxed text-base">
-              I help clients with architecture cleanup, integrations, subscriptions, push notifications, deep links, testing, store submissions, and post-launch maintenance. I also build AI-enabled mobile features like OCR, voice flows, semantic search, and LLM-powered assistants when the product needs them.
-            </p>
-            <p className="text-[var(--color-text-muted)] leading-relaxed text-base">
-              I use ChatGPT, Claude, and Codex to speed up debugging and review, but production decisions and release quality stay human-led.
-            </p>
+            {bioParagraphs.map((para, i) => (
+              <p key={i} className="text-[var(--color-text-muted)] leading-relaxed text-base" dangerouslySetInnerHTML={{ __html: para }} />
+            ))}
           </div>
 
           {/* Highlights Grid */}
