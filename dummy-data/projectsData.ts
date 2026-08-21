@@ -14,6 +14,14 @@ export interface ProjectCardData {
   webUrl?: string;
   isNda?: boolean;
   imageUrl: string;
+  problem?: string;
+  solution?: string;
+  outcome?: string;
+  myRole?: string;
+  coreCapabilities?: string[];
+  architecture?: string[];
+  bannerUrl?: string;
+  techStack?: string[];
 }
 
 export interface FilterTab {
@@ -24,12 +32,11 @@ export interface FilterTab {
 export const filterTabsData: FilterTab[] = [
   { id: "all", label: "All Work" },
   { id: "highlights", label: "Highlights" },
-  { id: "flutter", label: "Flutter Delivery" },
-  { id: "kmp", label: "KMP + Native" },
-  { id: "trading", label: "Trading & Fintech" },
-  { id: "utilities", label: "Utilities & Travel" },
-  { id: "habits", label: "Habits & Wellness" },
-  { id: "commerce", label: "Commerce & Business" },
+  { id: "flutter", label: "Flutter Apps" },
+  { id: "ai", label: "AI Integration" },
+  { id: "utilities", label: "Utilities & Health" },
+  { id: "commerce", label: "Business & Commerce" },
+  { id: "habits", label: "Wellness & EdTech" },
 ];
 
 export const PROJECTS_LIST: ProjectCardData[] = [
@@ -46,13 +53,31 @@ export const PROJECTS_LIST: ProjectCardData[] = [
       "Features information on snake species, hospitals, antivenom, rescuers, and emergency contacts.",
       "Innovation Grant funded by the SUFAL project, implemented by the Bangladesh Forest Department."
     ],
-    tech: ["Flutter", "Dart", "REST APIs", "SQFLite", "Firebase"],
+    tech: ["Flutter", "SQLite", "mobile app", "Android", "awareness", "emergency support"],
+    techStack: ["Flutter", "SQLite", "GetX", "Dio", "shared_preferences", "REST APIs", "Firebase"],
     filterCategories: ["flutter", "utilities", "highlights"],
     featured: true,
     installs: "1K+",
     rating: "4.8★",
     playStoreUrl: "https://play.google.com/store/apps/details?id=com.smartsoftware.snakebite",
     imageUrl: "/projects/snakebite.png",
+    bannerUrl: "/projects/snakebite_banner.png",
+    problem: "Delayed medical response, reliance on unscientific treatments, and difficulty in locating antivenom availability and trained snake rescuers during emergencies.",
+    solution: "Developed an offline-first mobile app using Flutter to provide instant access to emergency rescuers, antivenom hospitals, first aid guides, and snake identification resources.",
+    outcome: "Successfully deployed on Google Play Store, earning a 4.8+ star rating and serving as Bangladesh's first governmental-backed emergency response app for snakebites.",
+    myRole: "Led architecture and implementation across Flutter UI modules, designed the offline database layout, implemented location tracking for rescuers, and developed the hospital and antivenom stock directory integration.",
+    coreCapabilities: [
+      "Live hospital & antivenom stock directory locator",
+      "One-click emergency helpline dialer & direct rescuer contacts",
+      "Offline-enabled snake identification guide (30+ species)",
+      "Interactive first-aid response guidelines and safety FAQs"
+    ],
+    architecture: [
+      "Flutter & Dart for cross-platform utility structure",
+      "GetX for responsive state tracking and lightweight routing",
+      "SQLite (SQFLite) for offline database caching of emergency contacts",
+      "REST API integration for dynamic hospital & antivenom listings"
+    ]
   },
   {
     id: "com.dreamtrace.ai",
@@ -71,8 +96,28 @@ export const PROJECTS_LIST: ProjectCardData[] = [
     featured: true,
     installs: "Recently Launched",
     rating: "New",
+    problem: "Many people struggle to make sense of their dreams, lacking tools that provide meaningful, personalized interpretation — while existing solutions are either too generic, require manual journaling effort, or fail to track emotional patterns over time.",
+    solution: "Built an AI-powered mobile app using Flutter and OpenAI API that lets users log dreams via text or voice, then generates personalized interpretations and tracks emotional tone, mood trends, and dream history in a clean, engaging interface.",
+    outcome: "Successfully launched on Google Play Store with a \"Recently Launched\" designation, delivering a seamless AI dream journaling experience with positive early user engagement and a growing active user base.",
+    myRole: "Led full-stack mobile development — designed the UI/UX, integrated OpenAI API for dream interpretation, implemented voice-to-text input, built the dream history and mood tracking system, and managed Firebase backend and secure data storage.",
+    coreCapabilities: [
+      "AI-generated dream interpretations powered by OpenAI API",
+      "Voice-to-text dream logging for fast, hands-free entry",
+      "Mood tracking with emotional tone analysis per dream entry",
+      "Dream history dashboard with insights and weekly summaries",
+      "Secure encrypted storage of personal dream data via Firebase"
+    ],
+    architecture: [
+      "Flutter & Dart for cross-platform mobile UI",
+      "OpenAI API for natural language dream interpretation",
+      "GetX for state management and lightweight routing",
+      "Firebase for authentication, cloud storage, and real-time sync",
+      "REST APIs for AI model communication and data retrieval"
+    ],
+    techStack: ["Flutter", "OpenAI API", "GetX", "Firebase", "REST APIs", "Dio", "shared_preferences"],
     playStoreUrl: "https://play.google.com/store/apps/details?id=com.dreamtrace.ai",
-    imageUrl: "/projects/dreamtrace.png",
+    imageUrl: "/projects/dreamtrace_card.png",
+    bannerUrl: "/projects/dreamtrace_banner.png",
   },
   {
     id: "com.skillquester.app",
@@ -92,7 +137,8 @@ export const PROJECTS_LIST: ProjectCardData[] = [
     installs: "Recently Launched",
     rating: "New",
     appStoreUrl: "https://apps.apple.com/us/app/skillquester/id6755081369",
-    imageUrl: "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/77/b1/e9/77b1e923-1c10-ae48-1381-f161e1902d48/1.png/230x498bb.webp",
+    imageUrl: "/projects/skillquester_card.png",
+    bannerUrl: "/projects/skillquester_banner.png",
   },
   {
     id: "com.smartsoftware.hrm",

@@ -41,7 +41,7 @@ export default function TechStack() {
 
   return (
     <section id="tech-stack" className="py-20 px-6">
-      <div className="max-w-[1250px] mx-auto space-y-6">
+      <div className="max-w-6xl mx-auto space-y-6">
         <div>
           <h2 className="text-3xl md:text-4xl font-bold font-mono text-[var(--color-text)]">
             Tech Stack

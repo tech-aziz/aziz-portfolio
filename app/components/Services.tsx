@@ -40,7 +40,7 @@ export default function Services() {
                   {service.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-2.5 py-1 text-xs rounded-full bg-[var(--color-accent)]/10 text-[var(--color-accent)] border border-[var(--color-accent)]/20 font-medium"
+                      className="px-2 py-0.5 text-xs rounded-full bg-[var(--color-accent)]/10 text-[var(--color-accent)] border border-[var(--color-accent)]/20 font-medium"
                     >
                       {tag}
                     </span>
