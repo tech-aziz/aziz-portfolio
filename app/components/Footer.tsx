@@ -10,7 +10,7 @@ export default function Footer() {
 
   return (
     <footer className="py-8 px-6 border-t border-[var(--color-border)] bg-[var(--color-bg)]">
-      <div className="max-w-[1250px] mx-auto flex items-center justify-between gap-4 text-xs text-[var(--color-text-muted)]">
+      <div className="max-w-6xl mx-auto flex items-center justify-between gap-4 text-xs text-[var(--color-text-muted)]">
         <div>
           <p>© 2026 Azizul Hakim</p>
         </div>
