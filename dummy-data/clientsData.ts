@@ -1,5 +1,5 @@
 import { Building2, TrendingUp, Users, Smartphone, HeartHandshake, Award, ShieldAlert } from "lucide-react";
-import React from "react";
+// import React from "react";
 
 export interface Client {
   name: string;
@@ -8,7 +8,7 @@ export interface Client {
   metric: string;
   nicheTag: string;
   link?: string;
-  icon: React.ComponentType<{ className?: string }>;
+  icon: React.ElementType;
 }
 
 export const clientsData: Client[] = [
