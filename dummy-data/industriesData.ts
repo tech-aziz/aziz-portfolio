@@ -8,51 +8,43 @@ export interface IndustryItem {
 
 export const industriesData: IndustryItem[] = [
   {
-    emoji: "📈",
-    title: "Trader Companion Utilities",
-    subtitle: "8+ apps on App Store & Play Store",
+    emoji: "🩺",
+    title: "Healthcare & Emergency Medical",
+    subtitle: "Snakebite Guide & Prime Hospital portals",
     description:
-      "Helper tools for traders with no order execution: position sizing, Forex session tracking, countdowns, signal alerts, currency strength, stock/index lookup, and trading journals.",
-    tags: ["Forex Helpers", "Position Sizing", "Market Sessions", "RevenueCat", "No Order Execution"],
+      "Doctor consultation platforms, patient scheduling portals, and specialised first-aid utility apps providing emergency guidelines and medical support.",
+    tags: ["Hospital Portals", "Doctor Booking", "First Aid Guides", "HIPAA/Data Security"],
   },
   {
     emoji: "🧠",
-    title: "Trading Mindset & Habits",
-    subtitle: "2 KMP products",
+    title: "AI-Powered Wellness & Journals",
+    subtitle: "Dreamtrace.ai dream tracker",
     description:
-      "Performance and habit apps for discipline, routines, readiness monitoring, emotional check-ins, progress analytics, and behavior consistency across Android and iOS.",
-    tags: ["Kotlin Multiplatform", "Jetpack Compose", "SwiftUI", "Firebase", "Coroutines"],
+      "Intelligent mobile logs integrating generative AI engines to analyze user logs, track sleep patterns, perform mood check-ins, and deliver behavioral insights.",
+    tags: ["AI Integrations", "Dream Journals", "On-device AI", "Habit Analysis"],
   },
   {
-    emoji: "⛽",
-    title: "Consumer Utility Apps",
-    subtitle: "100K+ installs supported",
+    emoji: "🎓",
+    title: "Gamified EdTech & Skill Building",
+    subtitle: "Skillquester & The Akktricks portals",
     description:
-      "Everyday mobile utilities for fuel prices, personal vehicle expense tracking, local records, push engagement, offline-friendly storage, and simple repeat-use workflows.",
-    tags: ["Flutter", "SQFLite", "Firebase", "OneSignal", "AdMob"],
+      "Interactive tutorial and learning apps designed for gamified course delivery, skill quest tracking, and video guides for creative professionals.",
+    tags: ["Skill Quests", "Video Tutorials", "Interactive Quizzes", "In-App Purchases"],
   },
   {
-    emoji: "🌦️",
-    title: "Weather, Maps & Travel",
-    subtitle: "50K+ installs supported",
+    emoji: "🛠️",
+    title: "Field Utilities & Enterprise HRM",
+    subtitle: "HVAC Assistant & Smart HRM apps",
     description:
-      "Location-aware travel apps with motorway road conditions, weather forecasts, route information, maps, API-driven updates, and mobile-first travel utility screens.",
-    tags: ["Flutter", "Google Maps", "Weather APIs", "REST APIs", "Location UX"],
+      "B2B mobile tools containing calculator engines for HVAC technicians, combined with smart HR management portals for employee attendance, payroll, and logs.",
+    tags: ["HVAC Utilities", "Employee Portals", "Offline Tools", "Payroll Systems"],
   },
   {
-    emoji: "🛒",
-    title: "E-Commerce & Retail",
-    subtitle: "Retail mobile storefront",
+    emoji: "💬",
+    title: "Community Socials & Networks",
+    subtitle: "Somtalk app & APCOM directory",
     description:
-      "Shopping apps for brand discovery, products, offers, push-based engagement, ad-supported monetization, Firebase-backed data, and mobile-first browsing flows.",
-    tags: ["Flutter", "Firebase", "GetX", "OneSignal", "AdMob"],
-  },
-  {
-    emoji: "🧘",
-    title: "Wellbeing & Productivity",
-    subtitle: "Habit and nutrition products",
-    description:
-      "Habit tracking, nutrition, and personal productivity apps designed for low-friction daily use, progress visibility, and repeat engagement.",
-    tags: ["Habit Tracking", "Nutrition", "Productivity", "Retention", "Low Friction UX"],
+      "Real-time communication portals, community messaging forums, and corporate directory databases for associations and local networking.",
+    tags: ["Realtime Chat", "Member Databases", "WebSockets", "Push Notifications"],
   },
 ];

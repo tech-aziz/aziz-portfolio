@@ -43,10 +43,10 @@ export default function Navbar() {
           : "transparent",
       }}
     >
-      <div className="container mx-auto px-4 md:px-6 py-4 flex items-center justify-between">
+      <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Brand Logo */}
         <a
-          href="#"
+          href="/"
           className="font-mono text-2xl font-bold tracking-tight text-[var(--color-accent)] hover:opacity-85 transition-opacity flex items-center gap-2 group"
         >
           AH

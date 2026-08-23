@@ -2,7 +2,8 @@
 
 import React from "react";
 import Image from "next/image";
-import { Search, ExternalLink, X, Smartphone, ArrowRight, Play, Apple } from "lucide-react";
+import { Search, Smartphone, ArrowRight, Play, Apple } from "lucide-react";
+import Link from "next/link";
 import { useProjectsStore } from "../../store/useProjectsStore";
 import { ProjectCardData } from "../../dummy-data/projectsData";
 
@@ -20,9 +21,11 @@ export default function Projects() {
 
   const filteredProjects = getFilteredProjects();
 
+
+
   return (
     <section id="projects" className="py-20 px-6">
-      <div className="max-w-[1250px] mx-auto space-y-8">
+      <div className="max-w-6xl mx-auto space-y-8">
         {/* Header Title & Subtitle */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div>
@@ -30,7 +33,7 @@ export default function Projects() {
               Projects
             </h2>
             <p className="text-[var(--color-text-muted)] mt-2 text-base">
-              15+ production mobile apps across fintech, utility, commerce, and wellness domains.
+              8+ production mobile apps built using Flutter, Firebase, and AI across healthcare, EdTech, enterprise utility, and social domains.
             </p>
           </div>
 
@@ -55,7 +58,6 @@ export default function Projects() {
           </div>
         </div>
 
-        {/* Filter Pills List */}
         <div className="flex flex-wrap gap-2.5 overflow-x-auto pb-2">
           {filterTabs.map((tab) => {
             const isActive = activeFilter === tab.id;
@@ -63,20 +65,13 @@ export default function Projects() {
               <button
                 key={tab.id}
                 onClick={() => setActiveFilter(tab.id)}
-                className={`px-4 py-2 rounded-full text-xs font-mono font-medium transition-all duration-300 cursor-pointer flex items-center gap-1.5 ${
-                  isActive
-                    ? "bg-[#10b981] text-slate-950 font-bold shadow-md shadow-emerald-500/20"
-                    : "bg-[#161B18] text-gray-300 hover:text-white border border-[#10b981]/20 hover:border-[#10b981]/40"
-                }`}
+                className={`px-4.5 py-2 rounded-full text-xs font-mono font-medium transition-all duration-300 cursor-pointer flex items-center gap-1.5 border ${isActive
+                  ? "bg-[#10b981] text-white border-transparent shadow-md shadow-emerald-500/10 font-semibold"
+                  : "bg-white/5 text-gray-300 hover:text-white border-white/10 hover:border-white/20"
+                  }`}
               >
                 <span>{tab.label}</span>
-                <span
-                  className={`text-[10px] px-1.5 py-0.2 rounded-full ${
-                    isActive
-                      ? "bg-slate-950/20 text-slate-950 font-extrabold"
-                      : "bg-slate-800 text-gray-400"
-                  }`}
-                >
+                <span className={isActive ? "text-white/80 text-[11px]" : "text-gray-500 text-[11px]"}>
                   ({tab.count})
                 </span>
               </button>
@@ -89,11 +84,10 @@ export default function Projects() {
           {filteredProjects.map((project) => (
             <div
               key={project.id}
-              onClick={() => setSelectedProject(project)}
-              className="group bg-[#161B18] border border-slate-800/80 hover:border-[#10b981]/50 rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 cursor-pointer flex flex-col justify-between shadow-xl shadow-black/20"
+              className="group bg-[#161B18] border border-slate-800/80 hover:border-[#10b981]/50 rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 flex flex-col justify-start shadow-xl shadow-black/20 hover-card-shadow"
             >
               {/* Full Top Card Cover Image (No Mobile Shape Frame) */}
-              <div className="relative h-56 w-full overflow-hidden bg-slate-900 border-b border-slate-800/80">
+              <div className="relative h-44 w-full overflow-hidden bg-slate-900 border-b border-slate-800/80">
                 {/* Floating Top Badges */}
                 <div className="absolute top-3.5 left-3.5 right-3.5 flex items-center justify-between z-20 pointer-events-none">
                   {project.featured ? (
@@ -125,27 +119,36 @@ export default function Projects() {
                   alt={project.title}
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="object-cover"
                   unoptimized
                 />
               </div>
 
               {/* Card Body Content (#161B18) */}
-              <div className="p-5 flex-1 flex flex-col justify-between space-y-4">
-                <div>
-                  <h3 className="text-lg font-bold text-white group-hover:text-[#10b981] transition-colors mb-1">
-                    {project.title}
-                  </h3>
-                  <p className="text-xs text-gray-400 leading-relaxed line-clamp-2">
-                    {project.description}
-                  </p>
-                </div>
-
+              {/* Card Body Content (#161B18) */}
+              <div className="p-5 flex-1 flex flex-col justify-start">
                 <div className="space-y-3">
+                  <div>
+                    <h3 className="text-lg font-bold text-white group-hover:text-[#10b981] transition-colors mb-1">
+                      {project.title}
+                    </h3>
+                    <p className="text-xs text-gray-400 leading-relaxed line-clamp-2">
+                      {project.description}
+                    </p>
+                  </div>
+
                   {/* Platform Indicator */}
                   <div className="flex items-center gap-1.5 text-[11px] font-mono text-[#10b981] font-semibold">
                     <Smartphone className="w-3.5 h-3.5" />
-                    <span>Android + iOS</span>
+                    <span>
+                      {project.playStoreUrl && project.appStoreUrl
+                        ? "Android + iOS"
+                        : project.playStoreUrl
+                          ? "Android"
+                          : project.appStoreUrl
+                            ? "iOS"
+                            : "Android + iOS"}
+                    </span>
                   </div>
 
                   {/* Green Tech Pills Row */}
@@ -159,23 +162,29 @@ export default function Projects() {
                       </span>
                     ))}
                   </div>
+                </div>
 
-                  {/* Action Buttons Row */}
-                  <div className="pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs">
-                    <div className="flex items-center gap-2">
+                {/* Action Buttons Row */}
+                <div className="pt-2.5 border-t border-slate-800/80 flex items-center justify-between text-xs mt-2.5">
+                  <div className="flex items-center gap-2">
+                    {project.playStoreUrl && (
                       <a
-                        href={project.playStoreUrl || "#"}
+                        href={project.playStoreUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={(e) => e.stopPropagation()}
                         className="px-3 py-1.5 rounded-lg bg-[#10b981]/10 hover:bg-[#10b981]/20 text-[#10b981] border border-[#10b981]/30 text-[11px] font-medium flex items-center gap-1.5 transition-colors"
                       >
-                        <Play className="w-3 h-3 fill-current" />
+                        <svg className="w-3.5 h-3.5 shrink-0 fill-current" viewBox="0 0 512 512">
+                          <path d="M48 59.49v393a4.33 4.33 0 0 0 7.37 3.07L260 256 55.37 56.42A4.33 4.33 0 0 0 48 59.49zM345.8 174L89.22 32.64l-.16-.09c-4.42-2.4-8.62 3.58-5 7.06L307.14 256 89.06 472.39c-3.62 3.48.56 9.46 5 7.06l.16-.09L345.8 338c39.91-28.16 39.91-135.84 0-164zM477.44 221.63l-55.8-31.61-75.72 66 75.72 66 55.8-31.61c16-9.06 16-59.72 0-68.78z" />
+                        </svg>
                         <span>Play</span>
                       </a>
+                    )}
 
+                    {project.appStoreUrl && (
                       <a
-                        href={project.appStoreUrl || "#"}
+                        href={project.appStoreUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={(e) => e.stopPropagation()}
@@ -184,117 +193,21 @@ export default function Projects() {
                         <Apple className="w-3 h-3" />
                         <span>iOS</span>
                       </a>
-                    </div>
-
-                    <button
-                      onClick={() => setSelectedProject(project)}
-                      className="text-xs font-mono font-bold text-[#10b981] hover:underline flex items-center gap-1 cursor-pointer"
-                    >
-                      <span>View</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </button>
+                    )}
                   </div>
+
+                  <Link
+                    href={`/projects/${project.id}`}
+                    className="text-xs font-mono font-bold text-[#10b981] flex items-center gap-1 cursor-pointer"
+                  >
+                    <span>View</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
                 </div>
               </div>
             </div>
           ))}
         </div>
-
-        {/* Interactive Modal Dialog */}
-        {selectedProject && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-200">
-            <div
-              className="bg-[#161B18] border border-slate-800 rounded-3xl max-w-2xl lg:max-w-[70vw] w-full max-h-[90vh] overflow-y-auto p-6 md:p-8 shadow-2xl relative"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <button
-                onClick={() => setSelectedProject(null)}
-                className="absolute top-6 right-6 p-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-gray-400 hover:text-white border border-slate-700 transition-colors cursor-pointer"
-              >
-                <X className="w-5 h-5" />
-              </button>
-
-              <div className="mb-6 pr-10">
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="px-3 py-1 text-xs font-mono rounded-full bg-emerald-500/10 text-[#10b981] border border-emerald-500/20 font-bold">
-                    {selectedProject.installs ? `${selectedProject.installs} Downloads` : "Production Mobile App"}
-                  </span>
-                  {selectedProject.rating && (
-                    <span className="px-3 py-1 text-xs font-mono rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20 font-bold">
-                      {selectedProject.rating} Rating
-                    </span>
-                  )}
-                </div>
-
-                <h2 className="text-2xl md:text-3xl font-extrabold text-white mb-1">
-                  {selectedProject.title}
-                </h2>
-                <p className="text-sm font-mono text-[#10b981]">
-                  {selectedProject.subtitle}
-                </p>
-              </div>
-
-              <div className="mb-6">
-                <h4 className="text-xs font-mono uppercase tracking-wider text-gray-400 mb-2 font-semibold">
-                  Overview
-                </h4>
-                <p className="text-sm text-gray-200 leading-relaxed bg-slate-900/60 p-4 rounded-xl border border-slate-800">
-                  {selectedProject.description}
-                </p>
-              </div>
-
-              <div className="mb-6">
-                <h4 className="text-xs font-mono uppercase tracking-wider text-gray-400 mb-3 font-semibold">
-                  Key Technical Deliverables &amp; Impact
-                </h4>
-                <div className="space-y-2.5">
-                  {selectedProject.fullDetails.map((detail, i) => (
-                    <div key={i} className="flex items-start gap-3 text-sm text-gray-300">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#10b981] mt-2 shrink-0" />
-                      <span>{detail}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="mb-8">
-                <h4 className="text-xs font-mono uppercase tracking-wider text-gray-400 mb-3 font-semibold">
-                  Tech Stack
-                </h4>
-                <div className="flex flex-wrap gap-2">
-                  {selectedProject.tech.map((t) => (
-                    <span
-                      key={t}
-                      className="px-3 py-1 text-xs font-mono rounded-lg bg-[#10b981]/10 text-[#10b981] border border-[#10b981]/30 font-medium"
-                    >
-                      {t}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div className="flex items-center justify-end gap-3 pt-4 border-t border-slate-800">
-                <button
-                  onClick={() => setSelectedProject(null)}
-                  className="px-5 py-2.5 rounded-xl border border-slate-700 text-sm font-medium text-gray-400 hover:text-white hover:bg-slate-900 transition-colors"
-                >
-                  Close
-                </button>
-                {selectedProject.playStoreUrl && (
-                  <a
-                    href={selectedProject.playStoreUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-[#10b981] text-slate-950 text-sm font-bold transition-colors shadow-md shadow-emerald-500/20"
-                  >
-                    <span>View Store App</span>
-                    <ExternalLink className="w-4 h-4" />
-                  </a>
-                )}
-              </div>
-            </div>
-          </div>
-        )}
       </div>
     </section>
   );

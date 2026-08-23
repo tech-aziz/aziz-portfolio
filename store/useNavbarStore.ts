@@ -16,11 +16,10 @@ export const useNavbarStore = create<NavbarState>((set) => ({
   toggleMobileMenu: () => set((state) => ({ isMobileMenuOpen: !state.isMobileMenuOpen })),
   closeMobileMenu: () => set({ isMobileMenuOpen: false }),
   navLinks: [
-    { label: "About", href: "#about" },
-    { label: "Clients", href: "#clients" },
-    { label: "Services", href: "#services" },
-    { label: "Projects", href: "#projects" },
-    { label: "Tech Stack", href: "#tech-stack" },
-    { label: "Experience", href: "#experience" },
+    { label: "About", href: "/#about" },
+    { label: "Services", href: "/#services" },
+    { label: "Projects", href: "/#projects" },
+    { label: "Tech Stack", href: "/#tech-stack" },
+    { label: "Experience", href: "/#experience" },
   ],
 }));

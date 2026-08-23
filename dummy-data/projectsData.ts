@@ -14,6 +14,14 @@ export interface ProjectCardData {
   webUrl?: string;
   isNda?: boolean;
   imageUrl: string;
+  problem?: string;
+  solution?: string;
+  outcome?: string;
+  myRole?: string;
+  coreCapabilities?: string[];
+  architecture?: string[];
+  bannerUrl?: string;
+  techStack?: string[];
 }
 
 export interface FilterTab {
@@ -24,12 +32,11 @@ export interface FilterTab {
 export const filterTabsData: FilterTab[] = [
   { id: "all", label: "All Work" },
   { id: "highlights", label: "Highlights" },
-  { id: "flutter", label: "Flutter Delivery" },
-  { id: "kmp", label: "KMP + Native" },
-  { id: "trading", label: "Trading & Fintech" },
-  { id: "utilities", label: "Utilities & Travel" },
-  { id: "habits", label: "Habits & Wellness" },
-  { id: "commerce", label: "Commerce & Business" },
+  { id: "flutter", label: "Flutter Apps" },
+  { id: "ai", label: "AI Integration" },
+  { id: "utilities", label: "Utilities & Health" },
+  { id: "commerce", label: "Business & Commerce" },
+  { id: "habits", label: "Wellness & EdTech" },
 ];
 
 export const PROJECTS_LIST: ProjectCardData[] = [
@@ -46,13 +53,31 @@ export const PROJECTS_LIST: ProjectCardData[] = [
       "Features information on snake species, hospitals, antivenom, rescuers, and emergency contacts.",
       "Innovation Grant funded by the SUFAL project, implemented by the Bangladesh Forest Department."
     ],
-    tech: ["Flutter", "Dart", "REST APIs", "SQFLite", "Firebase"],
+    tech: ["Flutter", "SQLite", "mobile app", "Android", "awareness", "emergency support"],
+    techStack: ["Flutter", "SQLite", "GetX", "Dio", "shared_preferences", "REST APIs", "Firebase"],
     filterCategories: ["flutter", "utilities", "highlights"],
     featured: true,
     installs: "1K+",
     rating: "4.8★",
     playStoreUrl: "https://play.google.com/store/apps/details?id=com.smartsoftware.snakebite",
     imageUrl: "/projects/snakebite.png",
+    bannerUrl: "/projects/snakebite_banner.png",
+    problem: "Delayed medical response, reliance on unscientific treatments, and difficulty in locating antivenom availability and trained snake rescuers during emergencies.",
+    solution: "Developed an offline-first mobile app using Flutter to provide instant access to emergency rescuers, antivenom hospitals, first aid guides, and snake identification resources.",
+    outcome: "Successfully deployed on Google Play Store, earning a 4.8+ star rating and serving as Bangladesh's first governmental-backed emergency response app for snakebites.",
+    myRole: "Led architecture and implementation across Flutter UI modules, designed the offline database layout, implemented location tracking for rescuers, and developed the hospital and antivenom stock directory integration.",
+    coreCapabilities: [
+      "Live hospital & antivenom stock directory locator",
+      "One-click emergency helpline dialer & direct rescuer contacts",
+      "Offline-enabled snake identification guide (30+ species)",
+      "Interactive first-aid response guidelines and safety FAQs"
+    ],
+    architecture: [
+      "Flutter & Dart for cross-platform utility structure",
+      "GetX for responsive state tracking and lightweight routing",
+      "SQLite (SQFLite) for offline database caching of emergency contacts",
+      "REST API integration for dynamic hospital & antivenom listings"
+    ]
   },
   {
     id: "com.dreamtrace.ai",
@@ -71,14 +96,34 @@ export const PROJECTS_LIST: ProjectCardData[] = [
     featured: true,
     installs: "Recently Launched",
     rating: "New",
+    problem: "Many people struggle to make sense of their dreams, lacking tools that provide meaningful, personalized interpretation — while existing solutions are either too generic, require manual journaling effort, or fail to track emotional patterns over time.",
+    solution: "Built an AI-powered mobile app using Flutter and OpenAI API that lets users log dreams via text or voice, then generates personalized interpretations and tracks emotional tone, mood trends, and dream history in a clean, engaging interface.",
+    outcome: "Successfully launched on Google Play Store with a \"Recently Launched\" designation, delivering a seamless AI dream journaling experience with positive early user engagement and a growing active user base.",
+    myRole: "Led full-stack mobile development — designed the UI/UX, integrated OpenAI API for dream interpretation, implemented voice-to-text input, built the dream history and mood tracking system, and managed Firebase backend and secure data storage.",
+    coreCapabilities: [
+      "AI-generated dream interpretations powered by OpenAI API",
+      "Voice-to-text dream logging for fast, hands-free entry",
+      "Mood tracking with emotional tone analysis per dream entry",
+      "Dream history dashboard with insights and weekly summaries",
+      "Secure encrypted storage of personal dream data via Firebase"
+    ],
+    architecture: [
+      "Flutter & Dart for cross-platform mobile UI",
+      "OpenAI API for natural language dream interpretation",
+      "GetX for state management and lightweight routing",
+      "Firebase for authentication, cloud storage, and real-time sync",
+      "REST APIs for AI model communication and data retrieval"
+    ],
+    techStack: ["Flutter", "OpenAI API", "GetX", "Firebase", "REST APIs", "Dio", "shared_preferences"],
     playStoreUrl: "https://play.google.com/store/apps/details?id=com.dreamtrace.ai",
-    imageUrl: "/projects/dreamtrace.png",
+    imageUrl: "/projects/dreamtrace_card.png",
+    bannerUrl: "/projects/dreamtrace_banner.png",
   },
   {
     id: "com.skillquester.app",
     title: "SkillQuester",
     subtitle: "Master Real Life Skills",
-    description: "SkillQuester is a gamified learning app designed to help users build practical real-life skills through bite-sized lessons, challenges, and interactive progress systems. Starting with budgeting and personal finance, the app helps users develop better money habits and make smarter financial decisions through simple, engaging, and actionable learning experiences.",
+    description: "SkillQuester is a gamified learning app designed to help users build practical real-life skills through fun, bite-sized learning. It transforms essential life knowledge into an interactive experience.",
     fullDetails: [
       "Provides bite-sized lessons focused on practical real-life skills and personal finance.",
       "Covers budgeting, saving, debt management, smart spending, financial goals, credit, and long-term wealth habits.",
@@ -87,12 +132,30 @@ export const PROJECTS_LIST: ProjectCardData[] = [
       "Designed with beginner-friendly, practical, and actionable lessons that can be completed in just a few minutes."
     ],
     tech: ["Flutter", "Dart", "GetX", "Dio", "REST APIs", "Firebase", "Secure Data Storage", "Local Storage"],
+    techStack: ["Flutter", "Dart", "GetX", "Dio", "Firebase", "REST APIs", "Secure Storage"],
     filterCategories: ["flutter", "habits", "highlights"],
     featured: true,
     installs: "Recently Launched",
     rating: "New",
+    problem: "Most people graduate school without learning essential skills like budgeting, saving, investing, and managing money. Existing resources often rely on boring lectures or complicated financial jargon, making it difficult for individuals to stay motivated and actively improve their financial health.",
+    solution: "Developed a mobile app using Flutter that turns practical life skills into an engaging, game-like learning experience. The app teaches step-by-step through simple lessons, bite-sized challenges, and interactive progress systems, launching initially with a comprehensive Budgeting & Finance skill path.",
+    outcome: "Successfully launched on the App Store, providing users with a motivating way to level up their life skills. The app encourages consistent learning through daily streaks, progress levels, achievements, and clear milestones.",
+    myRole: "Led the end-to-end development of the iOS application using Flutter and Dart. Implemented robust state management with GetX, handled network requests via Dio, and integrated Firebase along with Secure Data Storage and Local Storage to ensure seamless progress tracking and data security.",
+    coreCapabilities: [
+      "Bite-sized challenges and interactive progress systems",
+      "Daily learning streaks and clear progress tracking",
+      "Budgeting & Finance skill path",
+      "Gamified learning with progress levels and achievements"
+    ],
+    architecture: [
+      "Flutter & Dart for cross-platform utility structure",
+      "GetX for responsive state tracking and lightweight routing",
+      "Firebase for backend and database",
+      "REST API integration using Dio for data fetching"
+    ],
     appStoreUrl: "https://apps.apple.com/us/app/skillquester/id6755081369",
-    imageUrl: "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/77/b1/e9/77b1e923-1c10-ae48-1381-f161e1902d48/1.png/230x498bb.webp",
+    imageUrl: "/projects/skillquester_card.png",
+    bannerUrl: "/projects/skillquester_banner.png",
   },
   {
     id: "com.smartsoftware.hrm",
@@ -112,12 +175,30 @@ export const PROJECTS_LIST: ProjectCardData[] = [
       "Provides news, holiday, and birthday notifications."
     ],
     tech: ["Flutter", "Dart", "REST APIs", "Firebase", "GPS & Location Services", "Push Notifications"],
+    techStack: ["Flutter", "Dart", "REST APIs", "Firebase", "GPS Services"],
     filterCategories: ["flutter", "commerce", "highlights"],
     featured: true,
     installs: "1K+",
     rating: "3.6★",
+    problem: "Managing HR processes manually or using disjointed tools often leads to errors in attendance tracking, payroll processing delays, and difficulty in monitoring employee field locations. Employees also struggle with fragmented systems for applying for leaves, tracking their daily work, and viewing pay-slips.",
+    solution: "Developed a cross-platform mobile application using Flutter to serve as a centralized hub for employees. It integrates GPS-based attendance tracking, secure leave management workflows, real-time work reporting, and payroll status viewing into a single, intuitive interface.",
+    outcome: "Deployed successfully and used by over 1,000 corporate employees. It has significantly streamlined HR operations, reduced payroll discrepancies, and increased transparency between management and employees.",
+    myRole: "Led the mobile application development using Flutter and Dart. Designed the UI for the dashboard, implemented GPS location tracking for attendance, integrated REST APIs for real-time synchronization with the HR backend, and utilized Firebase for push notifications.",
+    coreCapabilities: [
+      "GPS-based attendance and live employee location tracking",
+      "Leave applications with recommendation and approval workflows",
+      "Easy access to pay-slip details and salary status tracking",
+      "Daily work report management and HR loan applications"
+    ],
+    architecture: [
+      "Flutter & Dart for cross-platform mobile application structure",
+      "REST API integration for real-time data sync with corporate servers",
+      "Firebase Cloud Messaging for instant news, holiday, and birthday notifications",
+      "Native device integration for GPS services and location monitoring"
+    ],
     playStoreUrl: "https://play.google.com/store/apps/details?id=com.smartsoftware.hrm",
-    imageUrl: "/projects/smart_hrm.png",
+    imageUrl: "/projects/smart_hrm_dashboard.png",
+    bannerUrl: "/projects/smart_hrm_dashboard.png",
   },
   {
     id: "com.primehospitalltd.smart",
