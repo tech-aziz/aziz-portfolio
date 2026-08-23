@@ -1,4 +1,4 @@
-import { Smartphone, Layers, CheckCircle2, Bot } from "lucide-react";
+import { Smartphone, CheckCircle2, Bot, Lock } from "lucide-react";
 import React from "react";
 
 export interface AboutHighlight {
@@ -14,13 +14,8 @@ export const aboutHighlights: AboutHighlight[] = [
     icon: Smartphone,
   },
   {
-    title: "KMP + Native UI",
-    desc: "Shared logic with native UX quality",
-    icon: Layers,
-  },
-  {
-    title: "15+ Apps Shipped",
-    desc: "Play Store + App Store, 200K+ installs",
+    title: "8+ Apps Shipped",
+    desc: "Play Store + App Store, 6K+ installs",
     icon: CheckCircle2,
   },
   {
@@ -28,12 +23,19 @@ export const aboutHighlights: AboutHighlight[] = [
     desc: "Faster debugging and smarter release cycles",
     icon: Bot,
   },
+  {
+    title: "5+ Private Projects",
+    desc: "Confidential mobile solutions for private clients",
+    icon: Lock,
+  },
 ];
 
-export const exploringText = "Agentic AI, on-device AI, multimodal AI, OCR, voice AI, and semantic search";
+export const exploringText = "AI integration, AI-powered app development, and modern Flutter architecture";
 
 export const bioParagraphs = [
-  `I’m a mobile application developer focused on shipping Android and iOS products that are easier to launch, maintain, and grow. Over the last 5+ years, I’ve delivered 15+ production apps across Flutter, Kotlin Multiplatform, Jetpack Compose, and SwiftUI.`,
-  `I help clients with architecture cleanup, integrations, subscriptions, push notifications, deep links, testing, store submissions, and post-launch maintenance. I also build AI-enabled mobile features like OCR, voice flows, semantic search, and LLM-powered assistants when the product needs them.`,
-  `I use ChatGPT, Claude, and Codex to speed up debugging and review, but production decisions and release quality stay human-led.`
+  `I'm a mobile application developer focused on shipping Android and iOS products that are easier to launch, maintain, and grow. Over the last <strong class="font-semibold text-white">4+ years</strong>, I've worked primarily with <strong class="font-semibold text-white">Flutter</strong> and delivered <strong class="font-semibold text-white">8+ production apps</strong> across different industries.`,
+  `I help clients turn designs and ideas into production-ready mobile apps, covering architecture, REST API integrations, Firebase services, authentication, subscriptions and payments, push notifications, deep links, testing, performance optimization, store submissions, and post-launch maintenance.`,
+  `I use AI-powered tools to speed up debugging and review, but production decisions and release quality stay human-led.`
 ];
+
+

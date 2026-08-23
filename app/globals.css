@@ -26,6 +26,17 @@
   padding-right: 1.5rem;
 }
 
+.hover-card-shadow {
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+}
+
+.hover-card-shadow:hover {
+  box-shadow:
+    0 25px 50px -12px rgba(0, 0, 0, 0.85),
+    0 15px 25px -5px rgba(0, 0, 0, 0.5),
+    0 20px 40px -10px rgba(16, 185, 129, 0.3) !important;
+}
+
 @layer base {
   :root {
     --theme-bg: #0a0f0c;
