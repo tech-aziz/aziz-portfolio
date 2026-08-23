@@ -16,7 +16,15 @@ export default function Hero() {
     nextPhrase
   } = useHeroStore();
 
+  const [mounted, setMounted] = React.useState(false);
+
   useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
+
     const targetPhrase = TYPING_PHRASES[phraseIndex];
     let timer: NodeJS.Timeout;
 
@@ -42,7 +50,7 @@ export default function Hero() {
     }
 
     return () => clearTimeout(timer);
-  }, [currentText, isDeleting, phraseIndex, setCurrentText, setIsDeleting, nextPhrase]);
+  }, [currentText, isDeleting, phraseIndex, setCurrentText, setIsDeleting, nextPhrase, mounted]);
 
   const stats = heroStats;
 
@@ -95,7 +103,7 @@ export default function Hero() {
         <div className="h-10 flex items-center justify-center">
           <div className="inline-flex items-center gap-1">
             <span className="text-xl md:text-2xl font-mono font-bold text-[#10b981]">
-              {currentText}
+              {mounted ? currentText : ""}
             </span>
             <span className="text-xl md:text-2xl font-mono font-bold text-[#10b981] animate-blink">
               |
@@ -143,10 +151,10 @@ export default function Hero() {
 
         {/* Available Status Pill */}
         <div className="pt-4 flex justify-center">
-          <span className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#182f27] border border-[#10b981]/30 text-emerald-400 text-xs md:text-sm font-medium shadow-sm">
+          <span className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#22c55e]/10 border border-[#22c55e]/30 text-[#22c55e] text-xs md:text-sm font-medium shadow-sm">
             <span className="relative flex h-2.5 w-2.5">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#10b981]"></span>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#22c55e] opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#22c55e]"></span>
             </span>
             Available for Mobile App Projects &amp; Roles
           </span>

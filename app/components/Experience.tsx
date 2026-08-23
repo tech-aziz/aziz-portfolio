@@ -9,7 +9,7 @@ export default function Experience() {
 
   return (
     <section id="experience" className="py-20 px-6">
-      <div className="max-w-[1250px] mx-auto space-y-16">
+      <div className="max-w-6xl mx-auto space-y-16">
         <div>
           <h2 className="text-3xl md:text-4xl font-bold font-mono text-[var(--color-text)]">
             Work Experience
@@ -111,10 +111,10 @@ export default function Experience() {
         <div className="relative overflow-hidden bg-[var(--color-bg-green-card)] border border-[var(--color-border-green-card)] rounded-3xl p-10 md:p-14 text-center shadow-2xl space-y-6 max-w-[950px] mx-auto w-full">
           {/* Top Status Pill */}
           <div className="flex justify-center">
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-[#10b981] text-xs font-mono font-medium">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#22c55e]/10 border border-[#22c55e]/30 text-[#22c55e] text-xs font-sans font-medium">
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#10b981]"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#22c55e] opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#22c55e]"></span>
               </span>
               Available for freelance &amp; full-time mobile roles
             </span>
@@ -159,13 +159,13 @@ export default function Experience() {
 
           {/* Bottom Code Review Link */}
           <div className="pt-2">
-            <p className="text-xs text-[var(--color-text-muted)]">
-              Prefer to review code first?{" "}
+            <p className="text-xs text-[var(--color-text-muted)] flex items-center justify-center gap-1.5 flex-wrap">
+              <span>Prefer to review code first?</span>
               <a
                 href="https://github.com/tech-aziz"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#10b981] hover:underline font-mono inline-flex items-center gap-1 font-semibold"
+                className="text-[#10b981] hover:underline inline-flex items-center gap-1.5 font-medium"
               >
                 <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
                   <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
