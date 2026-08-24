@@ -197,8 +197,8 @@ export const PROJECTS_LIST: ProjectCardData[] = [
       "Native device integration for GPS services and location monitoring"
     ],
     playStoreUrl: "https://play.google.com/store/apps/details?id=com.smartsoftware.hrm",
-    imageUrl: "/projects/smart_hrm_dashboard.png",
-    bannerUrl: "/projects/smart_hrm_dashboard.png",
+    imageUrl: "/projects/smart_hrm.png",
+    bannerUrl: "/projects/smart_hrm.png",
   },
   {
     id: "com.primehospitalltd.smart",
