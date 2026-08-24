@@ -128,6 +128,8 @@ const jsonLd = {
   },
 };
 
+import SmoothScrollProvider from "./components/SmoothScrollProvider";
+
 export default function RootLayout({
   children,
 }: {
@@ -158,7 +160,9 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col selection:bg-emerald-500/30 selection:text-emerald-300">
-        {children}
+        <SmoothScrollProvider>
+          {children}
+        </SmoothScrollProvider>
       </body>
     </html>
   );
