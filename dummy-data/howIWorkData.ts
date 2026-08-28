@@ -23,7 +23,7 @@ export const howIWorkData: {
       iconName: "BrainCircuit",
       title: "AI-Augmented Delivery",
       description:
-        "I use ChatGPT, Codex, and Claude to accelerate debugging, diff review, implementation support, and edge-case exploration across Flutter, KMP, Jetpack Compose, and SwiftUI. Human review stays in every architecture and release-critical decision.",
+        "I use ChatGPT, Codex, and Claude to accelerate debugging, diff review, implementation support, and edge-case exploration across Flutter and mobile architectures. Human review stays in every architecture and release-critical decision.",
     },
     {
       iconName: "TrendingUp",

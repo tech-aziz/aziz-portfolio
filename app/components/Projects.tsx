@@ -45,7 +45,7 @@ export default function Projects() {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search projects..."
-              className="w-full pl-10 pr-4 py-2 rounded-xl bg-[#161B18] border border-[#10b981]/25 focus:border-[#10b981] outline-none text-xs text-[var(--color-text)] placeholder-[var(--color-text-muted)] transition-colors"
+              className="w-full pl-10 pr-4 py-2 rounded-xl bg-[var(--color-bg-card)] border border-[var(--color-border)] focus:border-[#10b981] outline-none text-xs text-[var(--color-text)] placeholder-[var(--color-text-muted)] transition-colors"
             />
             {searchQuery && (
               <button
@@ -67,11 +67,11 @@ export default function Projects() {
                 onClick={() => setActiveFilter(tab.id)}
                 className={`px-4.5 py-2 rounded-full text-xs font-mono font-medium transition-all duration-300 cursor-pointer flex items-center gap-1.5 border ${isActive
                   ? "bg-[#10b981] text-white border-transparent shadow-md shadow-emerald-500/10 font-semibold"
-                  : "bg-white/5 text-gray-300 hover:text-white border-white/10 hover:border-white/20"
+                  : "bg-[var(--color-bg-card)] text-[var(--color-text-muted)] hover:text-[var(--color-text)] border-[var(--color-border)] hover:border-[var(--color-border-hover)]"
                   }`}
               >
                 <span>{tab.label}</span>
-                <span className={isActive ? "text-white/80 text-[11px]" : "text-gray-500 text-[11px]"}>
+                <span className={isActive ? "text-white/80 text-[11px]" : "text-[var(--color-text-muted)] text-[11px]"}>
                   ({tab.count})
                 </span>
               </button>
@@ -79,15 +79,15 @@ export default function Projects() {
           })}
         </div>
 
-        {/* 3-Column Projects Grid (#161B18 Card) */}
+        {/* 3-Column Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredProjects.map((project) => (
             <div
               key={project.id}
-              className="group bg-[#161B18] border border-slate-800/80 hover:border-[#10b981]/50 rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 flex flex-col justify-start shadow-xl shadow-black/20 hover-card-shadow"
+              className="group bg-[var(--color-bg-card)] border border-[var(--color-border)] hover:border-[#10b981]/50 rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 flex flex-col justify-start shadow-xl shadow-black/10 hover-card-shadow"
             >
-              {/* Full Top Card Cover Image (No Mobile Shape Frame) */}
-              <div className="relative h-44 w-full overflow-hidden bg-slate-900 border-b border-slate-800/80">
+              {/* Full Top Card Cover Image */}
+              <div className="relative h-44 w-full overflow-hidden bg-[var(--color-bg)] border-b border-[var(--color-border)]">
                 {/* Floating Top Badges */}
                 <div className="absolute top-3.5 left-3.5 right-3.5 flex items-center justify-between z-20 pointer-events-none">
                   {project.featured ? (
@@ -110,8 +110,8 @@ export default function Projects() {
                   </div>
                 </div>
 
-                {/* Dark Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#161B18] via-transparent to-black/40 z-10 pointer-events-none" />
+                {/* Theme Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-bg-card)] via-transparent to-black/30 z-10 pointer-events-none" />
 
                 {/* Full Cover Image */}
                 <Image
@@ -124,15 +124,14 @@ export default function Projects() {
                 />
               </div>
 
-              {/* Card Body Content (#161B18) */}
-              {/* Card Body Content (#161B18) */}
+              {/* Card Body Content */}
               <div className="p-5 flex-1 flex flex-col justify-start">
                 <div className="space-y-3">
                   <div>
-                    <h3 className="text-lg font-bold text-white group-hover:text-[#10b981] transition-colors mb-1">
+                    <h3 className="text-lg font-bold text-[var(--color-text)] group-hover:text-[#10b981] transition-colors mb-1">
                       {project.title}
                     </h3>
-                    <p className="text-xs text-gray-400 leading-relaxed line-clamp-2">
+                    <p className="text-xs text-[var(--color-text-muted)] leading-relaxed line-clamp-2">
                       {project.description}
                     </p>
                   </div>
@@ -165,7 +164,7 @@ export default function Projects() {
                 </div>
 
                 {/* Action Buttons Row */}
-                <div className="pt-2.5 border-t border-slate-800/80 flex items-center justify-between text-xs mt-2.5">
+                <div className="pt-2.5 border-t border-[var(--color-border)] flex items-center justify-between text-xs mt-2.5">
                   <div className="flex items-center gap-2">
                     {project.playStoreUrl && (
                       <a

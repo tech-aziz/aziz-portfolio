@@ -55,7 +55,7 @@ export default function Hero() {
   const stats = heroStats;
 
   return (
-    <section className="relative overflow-hidden min-h-screen flex items-center pt-36 md:pt-44 pb-20 bg-[#0a0f0c]" id="hero">
+    <section className="relative overflow-hidden min-h-screen flex items-center pt-36 md:pt-44 pb-20 bg-[var(--color-bg)]" id="hero">
       {/* Exact Background Radial Glow Effect from original site inspect element */}
       <div
         className="absolute inset-0 pointer-events-none"
@@ -87,16 +87,16 @@ export default function Hero() {
         </div>
 
         {/* Intro Greeting */}
-        <p className="text-gray-400 text-base font-medium tracking-wide">Hi, I&apos;m</p>
+        <p className="text-[var(--color-text-muted)] text-base font-medium tracking-wide">Hi, I&apos;m</p>
 
         {/* Main Monospace Name Title */}
-        <h1 className="font-mono font-extrabold text-4xl md:text-6xl lg:text-7xl text-white tracking-tight leading-none">
+        <h1 className="font-mono font-extrabold text-4xl md:text-6xl lg:text-7xl text-[var(--color-text)] tracking-tight leading-none">
           Azizul Hakim
         </h1>
 
         {/* Subtitle */}
-        <p className="text-lg md:text-2xl text-gray-200 font-medium max-w-3xl mx-auto leading-relaxed">
-          Mobile Application Developer <span className="text-gray-500 font-normal">|</span> Flutter &amp; AI-Enabled Delivery
+        <p className="text-lg md:text-2xl text-[var(--color-text)] font-medium max-w-3xl mx-auto leading-relaxed">
+          Mobile Application Developer <span className="text-[var(--color-text-muted)] font-normal">|</span> Flutter &amp; AI-Enabled Delivery
         </p>
 
         {/* Cycling Typing Effect Text (#10B981) */}
@@ -112,21 +112,21 @@ export default function Hero() {
         </div>
 
         {/* Monospace Tagline Bar */}
-        <p className="text-xs md:text-sm text-gray-400 font-mono tracking-wider">
+        <p className="text-xs md:text-sm text-[var(--color-text-muted)] font-mono tracking-wider">
           4+ Years <span className="text-[#10b981]">|</span> 8+ Apps Delivered <span className="text-[#10b981]">|</span> 6K+ Installs <span className="text-[#10b981]">|</span> 5+ Private Projects
         </p>
 
-        {/* 4 Stat Counter Cards Grid (#182F27) */}
+        {/* 4 Stat Counter Cards Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5 pt-4 max-w-3xl mx-auto w-full">
           {stats.map((stat, idx) => (
             <div
               key={idx}
-              className="bg-[#182f27] border border-[#10b981]/25 hover:border-[#10b981]/60 rounded-2xl p-5 md:p-6 text-center transition-all duration-300 hover:-translate-y-1 shadow-xl shadow-black/20 group flex flex-col justify-center items-center"
+              className="bg-[var(--color-bg-green-card)] border border-[var(--color-border-green-card)] hover:border-[#10b981]/60 rounded-2xl p-5 md:p-6 text-center transition-all duration-300 hover:-translate-y-1 shadow-xl shadow-black/10 group flex flex-col justify-center items-center"
             >
               <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold font-mono text-[#10b981] group-hover:scale-105 transition-transform whitespace-nowrap">
                 {stat.value}
               </div>
-              <div className="text-[10px] md:text-xs text-gray-300 mt-2 font-mono tracking-wide whitespace-nowrap">
+              <div className="text-[10px] md:text-xs text-[var(--color-text-muted)] mt-2 font-mono tracking-wide whitespace-nowrap">
                 {stat.label}
               </div>
             </div>
@@ -137,13 +137,13 @@ export default function Hero() {
         <div className="flex flex-wrap justify-center items-center gap-4 pt-4">
           <a
             href="#projects"
-            className="inline-flex items-center justify-center bg-[#10b981] hover:bg-[#0e9f6e] text-white font-medium px-6 py-3 rounded-xl transition-all hover:scale-105 cursor-pointer text-base"
+            className="inline-flex items-center justify-center bg-[#10b981] hover:bg-[#0e9f6e] text-white font-medium px-6 py-3 rounded-xl transition-all hover:scale-105 cursor-pointer text-base shadow-sm"
           >
             View Projects
           </a>
           <a
             href="#contact"
-            className="inline-flex items-center justify-center bg-transparent border border-white/10 hover:border-white/20 text-white font-medium px-6 py-3 rounded-xl transition-all hover:scale-105 cursor-pointer text-base"
+            className="inline-flex items-center justify-center bg-[var(--color-bg-card)] border border-[var(--color-border)] hover:border-[var(--color-border-hover)] text-[var(--color-text)] font-medium px-6 py-3 rounded-xl transition-all hover:scale-105 cursor-pointer text-base"
           >
             Contact Me
           </a>

@@ -15,7 +15,7 @@ export default function Experience() {
             Work Experience
           </h2>
           <p className="text-[var(--color-text-muted)] mt-2 mb-12 text-base">
-            5+ years of production engineering experience building, shipping, and scaling mobile apps
+            Professional mobile engineering experience building, shipping, and scaling Flutter apps
           </p>
         </div>
 
@@ -150,9 +150,9 @@ export default function Experience() {
               href="https://www.fiverr.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-transparent border border-white/10 hover:border-white/20 text-white font-medium text-sm font-sans transition-all hover:scale-105"
+              className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-[var(--color-bg)]/80 hover:bg-[var(--color-bg-card)] border border-[var(--color-border)] hover:border-[var(--color-border-hover)] text-[var(--color-text)] font-medium text-sm font-sans transition-all hover:scale-105 shadow-sm"
             >
-              <span className="font-bold text-lg leading-none font-sans">f</span>
+              <span className="font-bold text-lg leading-none font-sans text-[#10b981]">f</span>
               <span>Hire Me on Fiverr</span>
             </a>
           </div>

@@ -21,5 +21,6 @@ export const useNavbarStore = create<NavbarState>((set) => ({
     { label: "Projects", href: "/#projects" },
     { label: "Tech Stack", href: "/#tech-stack" },
     { label: "Experience", href: "/#experience" },
+    { label: "Contact", href: "/#contact" },
   ],
 }));

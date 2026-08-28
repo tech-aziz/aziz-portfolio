@@ -15,13 +15,18 @@ export default function TechStack() {
     aiIntelligence
   } = techStack;
 
-  const renderGridSection = (title: string, items: TechItem[], gridCols: string = "grid-cols-3 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-8") => (
-    <div className="bg-[var(--color-bg-card)] border border-[var(--color-border)] rounded-2xl p-6 shadow-lg shadow-black/5">
+  const renderGridSection = (
+    title: string,
+    items: TechItem[],
+    gridCols: string = "grid-cols-3 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-8",
+    containerClass: string = "w-full"
+  ) => (
+    <div className={`bg-[var(--color-bg-card)] border border-[var(--color-border)] rounded-2xl p-6 shadow-lg shadow-black/5 ${containerClass}`}>
       <h3 className="font-mono text-xs font-semibold text-[var(--color-text-muted)] tracking-wider uppercase mb-6">
         {title}
       </h3>
 
-      <div className={`grid ${gridCols} gap-6 items-center justify-items-center`}>
+      <div className={`grid ${gridCols} gap-6 sm:gap-8 items-center justify-items-center`}>
         {items.map((item) => (
           <div
             key={item.name}
@@ -51,31 +56,53 @@ export default function TechStack() {
           </p>
         </div>
 
-        {/* 1. CORE LANGUAGES (DIRECT FLUENCY) - Full Width */}
-        {renderGridSection("CORE LANGUAGES (DIRECT FLUENCY)", coreLanguages, "grid-cols-3 sm:grid-cols-5 md:grid-cols-5")}
+        {/* 1. Top Row: Left (CORE LANGUAGES) & Right (AI & MOBILE INTELLIGENCE) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          <div className="lg:col-span-5">
+            {renderGridSection(
+              "CORE LANGUAGES (DIRECT FLUENCY)",
+              coreLanguages,
+              "grid-cols-3 gap-4 sm:gap-6",
+              "h-full"
+            )}
+          </div>
+          <div className="lg:col-span-7">
+            {renderGridSection(
+              "AI & MOBILE INTELLIGENCE",
+              aiIntelligence,
+              "grid-cols-3 sm:grid-cols-5 md:grid-cols-5",
+              "h-full"
+            )}
+          </div>
+        </div>
 
         {/* 2. Middle Row: Left (MOBILE & CROSS-PLATFORM) & Right (DATA & STORAGE) */}
-        <div className="grid lg:grid-cols-3 gap-6">
-          <div className="lg:col-span-2">
-            {renderGridSection("MOBILE & CROSS-PLATFORM", mobileCrossPlatform, "grid-cols-3 sm:grid-cols-4 md:grid-cols-7")}
-          </div>
-          <div className="lg:col-span-1">
-            {renderGridSection("DATA & STORAGE", dataStorage, "grid-cols-3 sm:grid-cols-3 md:grid-cols-5")}
-          </div>
-        </div>
-
-        {/* 3. Lower Middle Row: Left (BACKEND & INTEGRATIONS) & Right (TOOLS & DELIVERY) */}
         <div className="grid lg:grid-cols-2 gap-6">
           <div>
-            {renderGridSection("BACKEND & INTEGRATIONS", backendIntegrations, "grid-cols-3 sm:grid-cols-4 md:grid-cols-6")}
+            {renderGridSection("MOBILE & CROSS-PLATFORM", mobileCrossPlatform, "grid-cols-2 sm:grid-cols-4 md:grid-cols-4")}
           </div>
           <div>
-            {renderGridSection("TOOLS & DELIVERY", toolsDelivery, "grid-cols-3 sm:grid-cols-4 md:grid-cols-5")}
+            {renderGridSection("DATA & STORAGE", dataStorage, "grid-cols-2 sm:grid-cols-4 md:grid-cols-4")}
           </div>
         </div>
 
-        {/* 4. AI & MOBILE INTELLIGENCE - Full Width */}
-        {renderGridSection("AI & MOBILE INTELLIGENCE", aiIntelligence, "grid-cols-3 sm:grid-cols-5 md:grid-cols-5 lg:grid-cols-10")}
+        {/* 3. BACKEND & INTEGRATIONS - Full Width */}
+        <div>
+          {renderGridSection(
+            "BACKEND & INTEGRATIONS",
+            backendIntegrations,
+            "grid-cols-3 sm:grid-cols-4 md:grid-cols-7 lg:grid-cols-7"
+          )}
+        </div>
+
+        {/* 4. TOOLS & DELIVERY - Full Width */}
+        <div>
+          {renderGridSection(
+            "TOOLS & DELIVERY",
+            toolsDelivery,
+            "grid-cols-3 sm:grid-cols-5 md:grid-cols-9 lg:grid-cols-9"
+          )}
+        </div>
       </div>
     </section>
   );

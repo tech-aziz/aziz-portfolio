@@ -12,6 +12,7 @@ interface ContactState {
   copied: boolean;
   submitted: boolean;
   loading: boolean;
+  errorMessage: string | null;
   formData: FormData;
   emailAddress: string;
   setCopied: (copied: boolean) => void;
@@ -27,7 +28,8 @@ export const useContactStore = create<ContactState>((set, get) => ({
   copied: false,
   submitted: false,
   loading: false,
-  emailAddress: "faisalarshadciit@gmail.com", // Keeping original email as base (or can be configured)
+  errorMessage: null,
+  emailAddress: "azizulhakim.career@gmail.com",
   formData: {
     name: "",
     email: "",
@@ -47,6 +49,7 @@ export const useContactStore = create<ContactState>((set, get) => ({
       formData: { name: "", email: "", inquiryType: "Mobile App Project", subject: "", message: "" },
       submitted: false,
       loading: false,
+      errorMessage: null,
     }),
   copyEmail: () => {
     if (typeof window === "undefined") return;
@@ -58,14 +61,45 @@ export const useContactStore = create<ContactState>((set, get) => ({
   },
   submitForm: async (e) => {
     e.preventDefault();
-    set({ loading: true });
-    
-    // Simulate API request delay
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    
-    set({
-      loading: false,
-      submitted: true,
-    });
+    set({ loading: true, errorMessage: null });
+    const { formData, emailAddress } = get();
+
+    try {
+      const response = await fetch(`https://formsubmit.co/ajax/${emailAddress}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          inquiryType: formData.inquiryType,
+          subject: formData.subject || `Portfolio Contact from ${formData.name}`,
+          message: formData.message,
+          _subject: `New Portfolio Message from ${formData.name}: ${formData.subject || formData.inquiryType}`,
+        }),
+      });
+
+      if (response.ok) {
+        set({ loading: false, submitted: true });
+      } else {
+        const mailtoUrl = `mailto:${emailAddress}?subject=${encodeURIComponent(
+          formData.subject || `Inquiry: ${formData.inquiryType}`
+        )}&body=${encodeURIComponent(
+          `Name: ${formData.name}\nEmail: ${formData.email}\nType: ${formData.inquiryType}\n\nMessage:\n${formData.message}`
+        )}`;
+        window.location.href = mailtoUrl;
+        set({ loading: false, submitted: true });
+      }
+    } catch {
+      const mailtoUrl = `mailto:${emailAddress}?subject=${encodeURIComponent(
+        formData.subject || `Inquiry: ${formData.inquiryType}`
+      )}&body=${encodeURIComponent(
+        `Name: ${formData.name}\nEmail: ${formData.email}\nType: ${formData.inquiryType}\n\nMessage:\n${formData.message}`
+      )}`;
+      window.location.href = mailtoUrl;
+      set({ loading: false, submitted: true });
+    }
   },
 }));
