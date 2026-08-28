@@ -23,7 +23,8 @@ import {
   ScanText,
   Workflow,
   Share2,
-  Server
+  Server,
+  Sliders
 } from "lucide-react";
 
 export interface TechItem {
@@ -45,38 +46,12 @@ export const coreLanguages: TechItem[] = [
     ),
   },
   {
-    name: "Kotlin",
-    color: "#7F52FF",
-    customIcon: (
-      <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
-        <path d="M20 20H4V4H20L12 12L20 20Z" fill="url(#kotlin-grad)" />
-        <defs>
-          <linearGradient id="kotlin-grad" x1="4" y1="4" x2="20" y2="20" gradientUnits="userSpaceOnUse">
-            <stop stopColor="#E44857" />
-            <stop offset="0.5" stopColor="#C711E1" />
-            <stop offset="1" stopColor="#7F52FF" />
-          </linearGradient>
-        </defs>
-      </svg>
-    ),
-  },
-  {
     name: "Java",
     color: "#E51F24",
     customIcon: (
-      <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
-        <path d="M12 2C8 2 6 5 6 7C6 9 8 10 12 10C16 10 18 9 18 7C18 5 16 2 12 2Z" fill="#EA2D2E" />
-        <path d="M4 11C4 14 7.5 16.5 12 16.5C16.5 16.5 20 14 20 11H4Z" fill="#0074BD" />
-        <path d="M7 18C8.5 19.5 10 20 12 20C14 20 15.5 19.5 17 18" stroke="#E51F24" strokeWidth="2" strokeLinecap="round" />
-      </svg>
-    ),
-  },
-  {
-    name: "Swift",
-    color: "#F05138",
-    customIcon: (
-      <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
-        <path d="M19.5 14C17.5 17.5 13.5 19.5 9 19.5C6 19.5 4 18.5 2.5 17C6 17 8.5 15.5 10.5 13.5C7.5 13.5 5 11.5 4 9C6 9.5 7.5 9 8.5 8.5C5.5 8 3.5 5.5 3.5 2.5C5.5 4.5 8 5.5 11 5.5C14.5 5.5 18 3.5 19.5 1.5C18.5 4.5 16.5 7 14 8.5C16.5 8.5 19 7.5 20.5 6C20 9 18 11.5 15.5 13C17.5 13 19 12 20 11C19.5 12.5 18.5 13.5 19.5 14Z" fill="#F05138" />
+      <svg className="w-8 h-8" viewBox="0 0 128 128">
+        <path fill="#5382A1" d="M46.7 91.5c0 0-5.8 3.4 4.2 4.6 12.1 1.4 18.3 1.3 31.7-.7 0 0 3.7 2.3 8.8 4.3-30.8 11.2-65.7-1.3-44.7-8.2zm-2.4-14.8c0 0-6.1 4.5 3.5 5.7 13.1 1.7 23.9 1.8 42.1-.9 0 0 2.6 2.6 6.2 3.9-37.1 9.7-74.1.8-51.8-8.7zm25.9-25.1c5.2 6 2.7 11.4-4.2 16.7-7.9 6-10.9 9.3-3.9 14.8 0 0-21.7-10.9-10.7-22.3 9.4-9.8 14.4-9.6 18.8-.2zm24.6 30.6c-4.4 2.8-10.5 4.3-17.7 5.3 6.6-4.1 11.5-8.5 11.5-13.4 0-1.8-.7-3.4-1.9-4.8 5.6 3.6 11.2 7.7 8.1 12.9zm-49.6 19.8c0 0-5.3 4.1 3.5 5 11.7 1.2 21.6 1.4 39.8-.7 0 0 1.9 2.2 4.5 3.3-32.3 8.3-66.9.7-47.8-7.6zm42.7-52.9c7.6 8.7 1.9 18.1-13.4 26 0 0 18.1-9.5 13.4-26z"/>
+        <path fill="#EA2D2E" d="M68.5 12c4.1 4.7 1.1 9.4-4.8 13.8-7.7 5.8-12.7 10.6-2.5 19.3 0 0-22-12.1-12.4-23.7 8.7-10.4 15.6-9.5 19.7-.4zm21 21.6c4.9 5.6 1.1 11.3-5.8 16.6-8.9 6.8-11.8 11.4-3.5 18 0 0-22.8-12.6-11.7-25.1 9.7-11 16.1-9.7 21-.9zm-38 68.7c18.5 1.4 39.6-.3 52.8-5.3-3.9 3.2-9.4 5.3-16.1 6.8-19.4 4.3-45.7 3.3-57.5-.8 0 0 4 3 10.2 4.4-21.9 7-42.5 1.5-33.8-4 8.7-5.5 28.5-3.3 44.4-1.1zm52.4-7.4c1.1-.9 2-1.8 2.6-2.8.9 1.1 1.2 2.2.9 3.3-1.1 2.3-5.2 4.1-11.5 5.5 2.8-1.7 5.7-3.7 8-6zm-17.7 11.5c-20.1 3.2-46.7 3-57.7-1.3 0 0 4 2.8 11.3 4.1-23.2 6.8-40.4 1.7-33.2-3.4 9.1-6.5 35.8-4.5 56.4-1.9 8.2 1 16.7 1.9 23.2 2.5zm-59.5 7.1c-16.1 5.3-25.3 1.2-20.3-2.5 7.8-5.8 30.6-4.5 47.9-2.3 8.3 1.1 16.3 2 22.3 2.4-19 2.5-38.6 1.2-49.9 2.4z"/>
       </svg>
     ),
   },
@@ -96,37 +71,6 @@ export const mobileCrossPlatform: TechItem[] = [
         <path d="M14 2L5 11L8 14L17 5L14 2Z" fill="#54C5F8" />
         <path d="M8 14L14 20H17L11 14L8 14Z" fill="#01579B" />
         <path d="M11 14L14 17L17 14H11Z" fill="#29B6F6" />
-      </svg>
-    ),
-  },
-  {
-    name: "KMP",
-    color: "#7F52FF",
-    customIcon: (
-      <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
-        <rect width="24" height="24" rx="6" fill="#7F52FF" />
-        <path d="M6 18V6L12 12L6 18Z" fill="white" />
-        <path d="M18 18H12L18 12V18Z" fill="#C711E1" />
-      </svg>
-    ),
-  },
-  {
-    name: "Jetpack Compose",
-    color: "#4285F4",
-    customIcon: (
-      <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
-        <path d="M12 2L3 7V17L12 22L21 17V7L12 2Z" fill="#4285F4" />
-        <path d="M12 6L7 9V15L12 18L17 15V9L12 6Z" fill="#34A853" />
-      </svg>
-    ),
-  },
-  {
-    name: "SwiftUI",
-    color: "#F05138",
-    customIcon: (
-      <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
-        <circle cx="12" cy="12" r="10" fill="#F05138" />
-        <path d="M15 8L8 15" stroke="white" strokeWidth="2" strokeLinecap="round" />
       </svg>
     ),
   },
@@ -160,14 +104,9 @@ export const dataStorage: TechItem[] = [
     customIcon: <Database className="w-8 h-8 text-sky-400" />,
   },
   {
-    name: "Room",
-    color: "#4285F4",
-    customIcon: (
-      <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
-        <rect x="4" y="4" width="16" height="16" rx="4" fill="#4285F4" />
-        <path d="M8 12H16" stroke="white" strokeWidth="2" />
-      </svg>
-    ),
+    name: "SharedPreferences",
+    color: "#00E676",
+    customIcon: <Sliders className="w-8 h-8 text-emerald-400" />,
   },
   {
     name: "Hive",
@@ -183,26 +122,16 @@ export const dataStorage: TechItem[] = [
     color: "#FFCA28",
     customIcon: <Flame className="w-8 h-8 text-amber-400" />,
   },
-  {
-    name: "Supabase",
-    color: "#3ECF8E",
-    customIcon: <Zap className="w-8 h-8 text-emerald-400" />,
-  },
 ];
 
 export const backendIntegrations: TechItem[] = [
   { name: "Dio", color: "#E53935", customIcon: <Share2 className="w-7 h-7 text-red-500" /> },
-  { name: "Retrofit", color: "#FFFFFF", customIcon: <Server className="w-7 h-7 text-gray-200" /> },
-  { name: "URLSession", color: "#FF9500", customIcon: <Globe className="w-7 h-7 text-amber-500" /> },
   { name: "REST APIs", color: "#007AFF", customIcon: <Globe className="w-7 h-7 text-blue-500" /> },
   { name: "WebSockets", color: "#34C759", customIcon: <Share2 className="w-7 h-7 text-green-400" /> },
   { name: "Firebase Auth", color: "#FFCA28", customIcon: <Flame className="w-7 h-7 text-amber-400" /> },
   { name: "FCM", color: "#FF9800", customIcon: <Radio className="w-7 h-7 text-orange-400" /> },
-  { name: "OneSignal", color: "#E54B4B", customIcon: <Radio className="w-7 h-7 text-red-400" /> },
   { name: "Google Maps SDK", color: "#34A853", customIcon: <MapPin className="w-7 h-7 text-emerald-400" /> },
   { name: "RevenueCat", color: "#FF6B00", customIcon: <Shield className="w-7 h-7 text-orange-500" /> },
-  { name: "Play Billing", color: "#00C853", customIcon: <Zap className="w-7 h-7 text-green-500" /> },
-  { name: "StoreKit", color: "#007AFF", customIcon: <Shield className="w-7 h-7 text-blue-400" /> },
 ];
 
 export const toolsDelivery: TechItem[] = [
@@ -213,7 +142,6 @@ export const toolsDelivery: TechItem[] = [
   { name: "GitHub CI/CD", color: "#2088FF", customIcon: <Workflow className="w-7 h-7 text-blue-500" /> },
   { name: "Postman", color: "#FF6C37", customIcon: <Terminal className="w-7 h-7 text-orange-500" /> },
   { name: "Jira", color: "#0052CC", customIcon: <Workflow className="w-7 h-7 text-indigo-400" /> },
-  { name: "Shorebird OTA", color: "#10B981", customIcon: <Zap className="w-7 h-7 text-emerald-400" /> },
   { name: "Play Console", color: "#34A853", customIcon: <Smartphone className="w-7 h-7 text-green-400" /> },
   { name: "App Store Connect", color: "#007AFF", customIcon: <Smartphone className="w-7 h-7 text-blue-400" /> },
 ];
@@ -223,10 +151,5 @@ export const aiIntelligence: TechItem[] = [
   { name: "Codex", color: "#00D2FF", customIcon: <Code2 className="w-7 h-7 text-cyan-400" /> },
   { name: "Claude", color: "#D97706", customIcon: <Bot className="w-7 h-7 text-amber-500" /> },
   { name: "OpenAI", color: "#10A37F", customIcon: <Bot className="w-7 h-7 text-emerald-500" /> },
-  { name: "ML Kit", color: "#4285F4", customIcon: <Zap className="w-7 h-7 text-blue-400" /> },
-  { name: "TensorFlow Lite", color: "#FF6F00", customIcon: <Cpu className="w-7 h-7 text-orange-500" /> },
-  { name: "OCR", color: "#10B981", customIcon: <ScanText className="w-7 h-7 text-emerald-400" /> },
   { name: "Speech-to-Text", color: "#06B6D4", customIcon: <Mic className="w-7 h-7 text-cyan-400" /> },
-  { name: "Semantic Search", color: "#8B5CF6", customIcon: <Search className="w-7 h-7 text-purple-400" /> },
-  { name: "AI Code Review", color: "#F59E0B", customIcon: <CheckCircle className="w-7 h-7 text-amber-400" /> },
 ];
