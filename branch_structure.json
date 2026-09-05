@@ -1,0 +1,21 @@
+{
+  "default_branch": "main",
+  "branches": [
+    "aziz",
+    "aziz_home",
+    "main",
+    "origin"
+  ],
+  "parent": {
+    "aziz": "main",
+    "aziz_home": "main",
+    "main": null,
+    "origin": "main"
+  },
+  "order": [
+    "main",
+    "aziz",
+    "aziz_home",
+    "origin"
+  ]
+}
