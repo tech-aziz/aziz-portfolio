@@ -144,3 +144,14 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--theme-accent);
 }
+
+/* Hide Next.js dev indicators and overlays */
+nextjs-portal,
+[data-nextjs-dev-indicator],
+[data-nextjs-toast],
+[data-next-badge],
+#nextjs-dev-tools {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
