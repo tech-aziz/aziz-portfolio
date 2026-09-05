@@ -15,11 +15,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Azizul Hakim | Mobile Application Developer | Flutter & AI-Enabled Delivery",
+  title: "Azizul Hakim | Senior Android Developer | Flutter & AI-Enabled Delivery",
   description:
-    "Mobile Application Developer focused on Flutter and AI-enabled mobile features for Android and iOS. 15+ apps shipped, 15+ private NDA projects, and 200K+ installs.",
+    "Senior Android Developer focused on Flutter and AI-enabled mobile features for Android and iOS. 15+ apps shipped, 15+ private NDA projects, and 200K+ installs.",
   keywords: [
     "Azizul Hakim",
+    "Senior Android Developer",
     "Mobile Application Developer",
     "Flutter Developer",
     "Android Developer",
@@ -32,9 +33,9 @@ export const metadata: Metadata = {
   authors: [{ name: "Azizul Hakim", url: "https://github.com/tech-aziz" }],
   creator: "Azizul Hakim",
   openGraph: {
-    title: "Azizul Hakim | Mobile Application Developer | Flutter & AI-Enabled Delivery",
+    title: "Azizul Hakim | Senior Android Developer | Flutter & AI-Enabled Delivery",
     description:
-      "Mobile Application Developer focused on Flutter and AI-enabled mobile features for Android and iOS. 15+ apps shipped, 15+ private NDA projects, and 200K+ installs.",
+      "Senior Android Developer focused on Flutter and AI-enabled mobile features for Android and iOS. 15+ apps shipped, 15+ private NDA projects, and 200K+ installs.",
     url: "https://github.com/tech-aziz",
     siteName: "Azizul Hakim Portfolio",
     images: [
@@ -42,7 +43,7 @@ export const metadata: Metadata = {
         url: "/og-image.svg",
         width: 1200,
         height: 630,
-        alt: "Azizul Hakim - Mobile Application Developer",
+        alt: "Azizul Hakim - Senior Android Developer",
       },
     ],
     locale: "en_US",
@@ -50,9 +51,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Azizul Hakim | Mobile Application Developer | Flutter & AI-Enabled Delivery",
+    title: "Azizul Hakim | Senior Android Developer | Flutter & AI-Enabled Delivery",
     description:
-      "Mobile Application Developer focused on Flutter and AI-enabled mobile features for Android and iOS. 15+ apps shipped, 15+ private NDA projects, and 200K+ installs.",
+      "Senior Android Developer focused on Flutter and AI-enabled mobile features for Android and iOS. 15+ apps shipped, 15+ private NDA projects, and 200K+ installs.",
     images: ["/og-image.svg"],
   },
   icons: {
@@ -66,9 +67,9 @@ const jsonLd = {
   "@type": "Person",
   name: "Azizul Hakim",
   url: "https://github.com/tech-aziz",
-  jobTitle: "Mobile Application Developer | Flutter & AI-Enabled Delivery",
+  jobTitle: "Senior Android Developer | Flutter & AI-Enabled Delivery",
   description:
-    "Mobile Application Developer focused on Flutter and AI-enabled mobile features for Android and iOS. 15+ apps shipped, 15+ private NDA projects, and 200K+ installs.",
+    "Senior Android Developer focused on Flutter and AI-enabled mobile features for Android and iOS. 15+ apps shipped, 15+ private NDA projects, and 200K+ installs.",
   knowsAbout: [
     "Flutter",
     "Dart",

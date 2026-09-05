@@ -96,7 +96,7 @@ export default function Hero() {
 
         {/* Subtitle */}
         <p className="text-lg md:text-2xl text-[var(--color-text)] font-medium max-w-3xl mx-auto leading-relaxed">
-          Mobile Application Developer <span className="text-[var(--color-text-muted)] font-normal">|</span> Flutter &amp; AI-Enabled Delivery
+          Senior Android Developer <span className="text-[var(--color-text-muted)] font-normal">|</span> Flutter &amp; AI-Enabled Delivery
         </p>
 
         {/* Cycling Typing Effect Text (#10B981) */}
