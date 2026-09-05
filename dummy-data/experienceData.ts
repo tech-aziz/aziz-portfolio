@@ -18,13 +18,13 @@ export interface EducationItem {
 
 export const experiencesData: ExperienceItem[] = [
   {
-    title: "Mobile Application Developer (Flutter)",
-    company: "bdCalling IT Ltd.",
+    title: "Senior Software Engineer",
+    company: "Softvence",
     period: "Nov 2024 — Present",
-    location: "Banasree, Dhaka, Bangladesh",
+    location: "Mohakhali, Dhaka, Bangladesh",
     type: "Full-Time",
     description:
-      "BD Calling IT Ltd. delivers client-focused software solutions, where I contribute to multiple cross-platform mobile application projects using Flutter.",
+      "Softvence delivers client-focused software solutions, where I contribute to multiple cross-platform mobile application projects using Flutter.",
     bulletPoints: [
       "Developed and maintained cross-platform mobile applications ensuring responsive UI, seamless performance, and optimal code quality across Android and iOS.",
       "Integrated RESTful APIs and third-party services to enable real-time data synchronization and enhance app functionality as per client requirements.",
@@ -34,9 +34,9 @@ export const experiencesData: ExperienceItem[] = [
     skills: ["Flutter", "Dart", "RESTful APIs", "Android", "iOS", "UI/UX Implementation", "Git"],
   },
   {
-    title: "Junior Mobile Application Developer (Flutter)",
+    title: "Junior Software Engineer",
     company: "Smart Software Ltd.",
-    period: "Nov 2023 — Nov 2024",
+    period: "Nov 2023 — Oct 2024",
     location: "Panthapath, Dhaka, Bangladesh",
     type: "Full-Time",
     description:
@@ -46,12 +46,12 @@ export const experiencesData: ExperienceItem[] = [
       "Contributed to the Smart Bangladesh initiative by providing life-saving emergency guidance, snake identification, and hospital locators.",
       "Integrated Google Maps SDK for locating antivenom-providing hospitals with GetX state management and built custom animations following Material Design best practices.",
       "Developed Apcom e-Shop with flexible payment options including SSLCommerz and Cash on Delivery using GetX and SharedPreferences.",
-      "Collaborated with backend data services, implemented secure REST APIs, and managed Git version control workflows."
+      "Collaborated with backend data services, implemented secure REST APIs, and managed Git version control workflows.",
     ],
     skills: ["Flutter", "Dart", "GetX", "Google Maps SDK", "SharedPreferences", "SSLCommerz", "REST APIs"],
   },
   {
-    title: "Flutter Mentor",
+    title: "Flutter Instructor",
     company: "Atova Technology",
     period: "Sep 2023 — Nov 2023",
     location: "Mohammadpur, Dhaka, Bangladesh",
@@ -61,12 +61,12 @@ export const experiencesData: ExperienceItem[] = [
     bulletPoints: [
       "Mentored 30+ Polytechnic students in Flutter mobile app architecture, widget trees, and state management.",
       "Collaborated closely with students to solve practical programming roadblocks and accelerate learning curves.",
-      "Guided students in building hands-on mobile applications aligned with industry requirements."
+      "Guided students in building hands-on mobile applications aligned with industry requirements.",
     ],
     skills: ["Flutter", "Dart", "Mentorship", "Technical Training", "Code Review"],
   },
   {
-    title: "Mobile App Development Trainer (Flutter)",
+    title: "Flutter Development Trainer",
     company: "Maktab",
     period: "Jun 2023 — Aug 2023",
     location: "Mirpur, Dhaka, Bangladesh",
@@ -76,12 +76,12 @@ export const experiencesData: ExperienceItem[] = [
     bulletPoints: [
       "Trained 50+ students in core Flutter app development, widget lifecycles, and API integrations.",
       "Identified individual student weaknesses and delivered targeted recovery mentorship to build job readiness.",
-      "Conducted practical coding workshops and project reviews from concept to working mobile apps."
+      "Conducted practical coding workshops and project reviews from concept to working mobile apps.",
     ],
     skills: ["Flutter", "Dart", "Training & Mentorship", "UI Design", "App Architecture"],
   },
   {
-    title: "Flutter Mobile App Developer (Internship)",
+    title: "Mobile Application Developer",
     company: "Mediasoft Data Systems Limited",
     period: "Sep 2022 — May 2023",
     location: "Karwan Bazar, Dhaka, Bangladesh",
